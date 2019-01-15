@@ -28,12 +28,24 @@ namespace BB_app.Model.DB
                 Vjezbe v = new Vjezbe(); //instance of vjezbe for every row
                 v.Id = Convert.ToInt32(reader["ID"]);
                 v.Naziv = (string) reader["Naziv"];//casting (converting) to string
-                if(reader["Opis"].GetType() != typeof(DBNull)){ v.Opis = (string)reader["Opis"]; }//check if field is NULL (DBNull)
+                if(reader["Opis"].GetType() != typeof(DBNull))
+                {
+                    v.Opis = (string)reader["Opis"];
+                }//check if field is NULL (DBNull)
                 v.Sutevi = (bool) reader["Sutevi"];
-                if (reader["Brzina"].GetType() != typeof(DBNull)) { v.Brzina = (bool)reader["Brzina"]; }
+                if (reader["Brzina"].GetType() != typeof(DBNull))
+                {
+                    v.Brzina = (bool)reader["Brzina"];
+                }
                 v.Brojac = (bool) reader["Brojac"];
-                if (reader["Udaljenost"].GetType() != typeof(DBNull)) { v.Udaljenost = (bool)reader["Udaljenost"]; }
-                if (reader["Drugo"].GetType() != typeof(DBNull)) { v.Drugo = (string)reader["Drugo"]; }
+                if (reader["Udaljenost"].GetType() != typeof(DBNull))
+                {
+                    v.Udaljenost = (bool)reader["Udaljenost"];
+                }
+                if (reader["Drugo"].GetType() != typeof(DBNull))
+                {
+                    v.Drugo = (string)reader["Drugo"];
+                }
 
                 lista.Add(v);//add to list the new vjezba retrived from DB
             }
@@ -257,6 +269,38 @@ namespace BB_app.Model.DB
                 z.Rez_gost = Convert.ToInt32(reader["Rez_g"]);
 
                 lista.Add(z);
+            }
+            com.Dispose();
+
+            return lista;
+        }
+        public static List<Statistika> Zapisnik_Get_By_Id(int i_id, char type)
+        {
+            var lista = new List<Statistika>();
+
+            SQLiteCommand com = DB_connection.conn.CreateCommand();
+            com.CommandText = String.Format(@"SELECT * FROM STATISTIKA WHERE Entitet_ID = {0} AND Vrsta_entiteta = {1}", i_id, type);
+            SQLiteDataReader reader = com.ExecuteReader();
+            while (reader.Read())
+            {
+                Statistika s = new Statistika();
+
+                s.Id = Convert.ToInt32(reader["ID"]);
+                if (reader["Entitet_ID"].GetType() != typeof(DBNull)) { s.Entity_Id= Convert.ToInt32(reader["Entitet_ID"]); }
+                if (reader["Vrsta_entiteta"].GetType() != typeof(DBNull)) { s.Entity_type = Convert.ToChar(reader["Vrsta_entiteta"]); }
+                if (reader["Post_sutevi"].GetType() != typeof(DBNull)) { s.Postotak_suteva = Convert.ToDecimal(reader["Post_sutevi"]); }
+                if (reader["Post_prisutnost"].GetType() != typeof(DBNull)) { s.Postotak_prisutnost = Convert.ToDecimal(reader["Post_prisutnost"]); }
+                if (reader["Visina"].GetType() != typeof(DBNull)) { s.Visina = Convert.ToDecimal(reader["Visina"]); }
+                if (reader["Tezina"].GetType() != typeof(DBNull)) { s.Tezina = Convert.ToDecimal(reader["Tezina"]); }
+                if (reader["Raspon_ruku"].GetType() != typeof(DBNull)) { s.Raspon_ruku = Convert.ToDecimal(reader["Raspon_ruku"]); }
+                if (reader["Brzina_sprint"].GetType() != typeof(DBNull)) { s.Brz_Spr = Convert.ToDecimal(reader["Brzina_sprint"]); }
+                if (reader["Brzina_su"].GetType() != typeof(DBNull)) { s.Brz_SU = Convert.ToDecimal(reader["Brzina_su"]); }
+                if (reader["Skok_udalj"].GetType() != typeof(DBNull)) { s.Skok_ud = Convert.ToDecimal(reader["Skok_udalj"]); }
+                if (reader["Prvo_mjerenje"].GetType() != typeof(DBNull)) { s.Prvo_mjerenje = Convert.ToBoolean(reader["Prvo_mjerenje"]); }
+
+
+
+                lista.Add(s);
             }
             com.Dispose();
 

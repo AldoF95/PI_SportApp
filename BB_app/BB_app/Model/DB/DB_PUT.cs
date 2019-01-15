@@ -83,5 +83,31 @@ namespace BB_app.Model.DB
             com.ExecuteNonQuery();
             com.Dispose();
         }
+        public static void Statistika_Put(Statistika stat)
+        {
+            SQLiteCommand com = DB_connection.conn.CreateCommand();
+            com.CommandText = String.Format(@"INSERT INTO STATISTIKA (Entitet_ID, Vrsta_entiteta, Post_sutevi, Post_prisutnost, Visina, Tezina, Raspon_ruku, Brzina_sprint, Brzina_su, Skok_udalj, Prvo_mjerenje)
+                                               VALUES ('{0}', '{1}', '{2}','{3}', '{4}', '{5}','{6}', '{7}', '{8}','{9}', '{10}')",
+                                              stat.Entity_Id, 
+                                              stat.Entity_type, 
+                                              stat.Postotak_suteva, 
+                                              stat.Postotak_prisutnost, 
+                                              stat.Visina, 
+                                              stat.Tezina, 
+                                              stat.Raspon_ruku, 
+                                              stat.Brz_Spr, 
+                                              stat.Brz_SU, 
+                                              stat.Skok_ud, 
+                                              stat.Prvo_mjerenje);
+            com.ExecuteNonQuery();
+            com.Dispose();
+        }
+        public static void Statistika_Put_List(List<Statistika> stat)
+        {
+            foreach (var s in stat)
+            {
+                Statistika_Put(s);
+            }
+        }
     }
 }

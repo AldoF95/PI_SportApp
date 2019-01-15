@@ -10,13 +10,19 @@ namespace BB_app.Model.DB
     public static class DB_connection
     {
         //static class
-        //connection string --> moze i "URI:file.database.db"
+        //connection string --> moze i "URI=file:database.db"
         private static string conn_string = "URI=file:database.db";
         internal static SQLiteConnection conn = new SQLiteConnection(conn_string);
         //open connection
-        internal static void OpenConn() { conn.Open(); }
+        internal static void OpenConn()
+        {
+            conn.Open();
+        }
         //close connection
-        internal static void CloseConn() { conn.Close(); }
+        internal static void CloseConn()
+        {
+            conn.Close();
+        }
  
     }
 }
