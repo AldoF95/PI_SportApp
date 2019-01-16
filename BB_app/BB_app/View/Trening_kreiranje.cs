@@ -114,11 +114,11 @@ namespace BB_app.View
             }
             Trening tr = new Trening(txtbTreningKreiraj01.Text, (int)tren.Count);
             Trening tr_id = new Trening();
-            /*DB_connection.OpenConn();
+            DB_connection.OpenConn();
             DB_PUT.Trening_Put(tr);
             tr_id = DB_GET.Trening_Get_Last_Add();
             DB_connection.CloseConn();
-            tr.Id = tr_id.Id;*/
+            tr.Id = tr_id.Id;
 
             foreach (DataGridViewRow row in gv.Rows)
             {
@@ -132,9 +132,9 @@ namespace BB_app.View
                 }
                 pris.Add(p);
             }
-            /*DB_connection.OpenConn();
+            DB_connection.OpenConn();
             DB_PUT.Prisutnost_Put_List(pris);
-            DB_connection.CloseConn();*/
+            DB_connection.CloseConn();
 
             new Trening_dashboard(tr, igrac, tren).Show();
             this.Close();

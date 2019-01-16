@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Trening_dashboard));
             this.lblDashboard01 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picbDashboardTeren = new System.Windows.Forms.PictureBox();
             this.timerDashboard = new System.Windows.Forms.Timer(this.components);
             this.btnDashboardSprint = new MetroFramework.Controls.MetroButton();
             this.btnDashboardSkUd = new MetroFramework.Controls.MetroButton();
@@ -51,7 +51,8 @@
             this.lblPanel01 = new System.Windows.Forms.Label();
             this.lblPanelTitle = new System.Windows.Forms.Label();
             this.dgvDashboardIgraci = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.lblDashboardResult = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.picbDashboardTeren)).BeginInit();
             this.panelDashboardTimer.SuspendLayout();
             this.panelDashboardUnos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDashboardIgraci)).BeginInit();
@@ -68,15 +69,16 @@
             this.lblDashboard01.TabIndex = 0;
             this.lblDashboard01.Text = "label1";
             // 
-            // pictureBox1
+            // picbDashboardTeren
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(585, 47);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(665, 621);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.picbDashboardTeren.Image = ((System.Drawing.Image)(resources.GetObject("picbDashboardTeren.Image")));
+            this.picbDashboardTeren.Location = new System.Drawing.Point(585, 47);
+            this.picbDashboardTeren.Name = "picbDashboardTeren";
+            this.picbDashboardTeren.Size = new System.Drawing.Size(665, 621);
+            this.picbDashboardTeren.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picbDashboardTeren.TabIndex = 1;
+            this.picbDashboardTeren.TabStop = false;
+            this.picbDashboardTeren.MouseUp += new System.Windows.Forms.MouseEventHandler(this.picbDashboardTeren_MouseUp);
             // 
             // timerDashboard
             // 
@@ -319,6 +321,19 @@
             this.dgvDashboardIgraci.Size = new System.Drawing.Size(326, 285);
             this.dgvDashboardIgraci.TabIndex = 11;
             // 
+            // lblDashboardResult
+            // 
+            this.lblDashboardResult.BackColor = System.Drawing.Color.Transparent;
+            this.lblDashboardResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDashboardResult.ForeColor = System.Drawing.Color.LimeGreen;
+            this.lblDashboardResult.Location = new System.Drawing.Point(958, 9);
+            this.lblDashboardResult.Name = "lblDashboardResult";
+            this.lblDashboardResult.Size = new System.Drawing.Size(292, 23);
+            this.lblDashboardResult.TabIndex = 12;
+            this.lblDashboardResult.Text = "label1";
+            this.lblDashboardResult.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblDashboardResult.Visible = false;
+            // 
             // Trening_dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -326,6 +341,7 @@
             this.BackgroundImage = global::BB_app.Properties.Resources._1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1282, 720);
+            this.Controls.Add(this.lblDashboardResult);
             this.Controls.Add(this.dgvDashboardIgraci);
             this.Controls.Add(this.panelDashboardUnos);
             this.Controls.Add(this.btnDashboardMjerenja);
@@ -335,12 +351,12 @@
             this.Controls.Add(this.panelDashboardTimer);
             this.Controls.Add(this.btnDashboardSkUd);
             this.Controls.Add(this.btnDashboardSprint);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.picbDashboardTeren);
             this.Controls.Add(this.lblDashboard01);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Trening_dashboard";
             this.Text = "Trening dashboard";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbDashboardTeren)).EndInit();
             this.panelDashboardTimer.ResumeLayout(false);
             this.panelDashboardUnos.ResumeLayout(false);
             this.panelDashboardUnos.PerformLayout();
@@ -352,7 +368,7 @@
         #endregion
 
         private System.Windows.Forms.Label lblDashboard01;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picbDashboardTeren;
         private System.Windows.Forms.Timer timerDashboard;
         private MetroFramework.Controls.MetroButton btnDashboardSprint;
         private MetroFramework.Controls.MetroButton btnDashboardSkUd;
@@ -372,5 +388,6 @@
         private System.Windows.Forms.Label lblPanel01;
         private System.Windows.Forms.Label lblPanelTitle;
         private System.Windows.Forms.DataGridView dgvDashboardIgraci;
+        private System.Windows.Forms.Label lblDashboardResult;
     }
 }

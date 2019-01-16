@@ -34,6 +34,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.WinForms, Version=0.9.7.1, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.WinForms.0.9.7.1\lib\net45\LiveCharts.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
     <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
     </Reference>
@@ -43,11 +52,14 @@
     <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.SQLite, Version=1.0.109.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Data.SQLite.Core.1.0.109.2\lib\net46\System.Data.SQLite.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -57,6 +69,8 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\DB\DB_GET.cs" />
@@ -66,6 +80,7 @@
     <Compile Include="Model\Igraci.cs" />
     <Compile Include="Model\Kosevi.cs" />
     <Compile Include="Model\Prisutnost.cs" />
+    <Compile Include="Model\Statistika.cs" />
     <Compile Include="Model\Trening.cs" />
     <Compile Include="Model\Vjezbe.cs" />
     <Compile Include="Model\Zapisnik.cs" />
@@ -85,6 +100,12 @@
     <Compile Include="View\Kosevi_popup.Designer.cs">
       <DependentUpon>Kosevi_popup.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Mjerenja_popup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Mjerenja_popup.Designer.cs">
+      <DependentUpon>Mjerenja_popup.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Pocetna.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +117,12 @@
     </Compile>
     <Compile Include="View\Prikaz_suteva.Designer.cs">
       <DependentUpon>Prikaz_suteva.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Statistika_prikaz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Statistika_prikaz.Designer.cs">
+      <DependentUpon>Statistika_prikaz.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Trening_dashboard.cs">
       <SubType>Form</SubType>
@@ -143,11 +170,17 @@
     <EmbeddedResource Include="View\Kosevi_popup.resx">
       <DependentUpon>Kosevi_popup.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Mjerenja_popup.resx">
+      <DependentUpon>Mjerenja_popup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Pocetna.resx">
       <DependentUpon>Pocetna.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Prikaz_suteva.resx">
       <DependentUpon>Prikaz_suteva.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Statistika_prikaz.resx">
+      <DependentUpon>Statistika_prikaz.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Trening_dashboard.resx">
       <DependentUpon>Trening_dashboard.cs</DependentUpon>
@@ -181,6 +214,7 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="Resources\1.jpg" />
+    <Content Include="Resources\background_02.jpg" />
     <Content Include="Resources\false_sut.png" />
     <Content Include="Resources\field.jpg" />
     <Content Include="Resources\true_sut.png" />

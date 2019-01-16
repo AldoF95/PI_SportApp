@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pocetna));
             this.btnTrening = new MetroFramework.Controls.MetroButton();
             this.btnUnos = new MetroFramework.Controls.MetroButton();
-            this.btnPocetnaKosevi = new MetroFramework.Controls.MetroButton();
+            this.btnPocetnaStatistika = new MetroFramework.Controls.MetroButton();
             this.btnZapisnik = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
@@ -45,7 +45,7 @@
             this.btnTrening.Name = "btnTrening";
             this.btnTrening.Size = new System.Drawing.Size(200, 160);
             this.btnTrening.TabIndex = 0;
-            this.btnTrening.Text = "Trening";
+            this.btnTrening.Text = "TRENING";
             this.btnTrening.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.btnTrening.UseSelectable = true;
             this.btnTrening.Click += new System.EventHandler(this.btnTrening_Click);
@@ -58,22 +58,22 @@
             this.btnUnos.Name = "btnUnos";
             this.btnUnos.Size = new System.Drawing.Size(200, 160);
             this.btnUnos.TabIndex = 1;
-            this.btnUnos.Text = "Unos";
+            this.btnUnos.Text = "UNOS";
             this.btnUnos.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.btnUnos.UseSelectable = true;
             this.btnUnos.Click += new System.EventHandler(this.btnUnos_Click);
             // 
-            // btnPocetnaKosevi
+            // btnPocetnaStatistika
             // 
-            this.btnPocetnaKosevi.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.btnPocetnaKosevi.Location = new System.Drawing.Point(174, 278);
-            this.btnPocetnaKosevi.Name = "btnPocetnaKosevi";
-            this.btnPocetnaKosevi.Size = new System.Drawing.Size(200, 160);
-            this.btnPocetnaKosevi.TabIndex = 2;
-            this.btnPocetnaKosevi.Text = "Kosevi";
-            this.btnPocetnaKosevi.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.btnPocetnaKosevi.UseSelectable = true;
-            this.btnPocetnaKosevi.Click += new System.EventHandler(this.btnPocetnaKosevi_Click);
+            this.btnPocetnaStatistika.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.btnPocetnaStatistika.Location = new System.Drawing.Point(174, 278);
+            this.btnPocetnaStatistika.Name = "btnPocetnaStatistika";
+            this.btnPocetnaStatistika.Size = new System.Drawing.Size(200, 160);
+            this.btnPocetnaStatistika.TabIndex = 2;
+            this.btnPocetnaStatistika.Text = "STATISTIKA";
+            this.btnPocetnaStatistika.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.btnPocetnaStatistika.UseSelectable = true;
+            this.btnPocetnaStatistika.Click += new System.EventHandler(this.btnPocetnaStatistika_Click);
             // 
             // btnZapisnik
             // 
@@ -85,7 +85,7 @@
             this.btnZapisnik.Name = "btnZapisnik";
             this.btnZapisnik.Size = new System.Drawing.Size(200, 160);
             this.btnZapisnik.TabIndex = 3;
-            this.btnZapisnik.Text = "Zapisnik";
+            this.btnZapisnik.Text = "ZAPISNIK";
             this.btnZapisnik.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.btnZapisnik.UseSelectable = true;
             this.btnZapisnik.Click += new System.EventHandler(this.btnZapisnik_Click);
@@ -99,7 +99,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 550);
             this.Controls.Add(this.btnZapisnik);
-            this.Controls.Add(this.btnPocetnaKosevi);
+            this.Controls.Add(this.btnPocetnaStatistika);
             this.Controls.Add(this.btnUnos);
             this.Controls.Add(this.btnTrening);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -114,7 +114,7 @@
 
         private MetroFramework.Controls.MetroButton btnTrening;
         private MetroFramework.Controls.MetroButton btnUnos;
-        private MetroFramework.Controls.MetroButton btnPocetnaKosevi;
+        private MetroFramework.Controls.MetroButton btnPocetnaStatistika;
         private MetroFramework.Controls.MetroButton btnZapisnik;
     }
 }

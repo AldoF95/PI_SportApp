@@ -15,6 +15,9 @@ namespace BB_app.View
     //forma za biranje bodova i pogodeno ili ne
     public partial class Kosevi_popup : Form
     {
+        public bool Pogodeno_popup { get; set; }
+        public int Bodovi_popup { get; set; }
+        public bool status { get; set; }
         Kosevi kos_sut = new Kosevi();
 
         public Kosevi_popup(int X, int Y, int formX, int formY, Kosevi kos)
@@ -33,8 +36,10 @@ namespace BB_app.View
             if (rbtnKoseviPopup02.Checked)
             {
                 kos_sut.Br_Bod = 1;
-                if (chbKoseviPogodeno.Checked) { kos_sut.Pogodak = true; }
-                else { kos_sut.Pogodak = false; }
+                this.Bodovi_popup = 1;
+                if (chbKoseviPogodeno.Checked) { kos_sut.Pogodak = true; this.Pogodeno_popup = true; }
+                else { kos_sut.Pogodak = false; this.Pogodeno_popup = false; }
+                this.status = true;
             }
             DB_connection.OpenConn();
             DB_PUT.Kosevi_Put(kos_sut); //spremanje suta
@@ -47,8 +52,10 @@ namespace BB_app.View
             if (rbtnKoseviPopup03.Checked)
             {
                 kos_sut.Br_Bod = 2;
-                if (chbKoseviPogodeno.Checked) { kos_sut.Pogodak = true; }
-                else { kos_sut.Pogodak = false; }
+                this.Bodovi_popup = 2;
+                if (chbKoseviPogodeno.Checked) { kos_sut.Pogodak = true; this.Pogodeno_popup = true; }
+                else { kos_sut.Pogodak = false; this.Pogodeno_popup = false; }
+                this.status = true;
             }
             DB_connection.OpenConn();
             DB_PUT.Kosevi_Put(kos_sut);
@@ -62,8 +69,10 @@ namespace BB_app.View
             if (rbtnKoseviPopup04.Checked)
             {
                 kos_sut.Br_Bod = 3;
-                if (chbKoseviPogodeno.Checked) { kos_sut.Pogodak = true; }
-                else { kos_sut.Pogodak = false; }
+                this.Bodovi_popup = 3;
+                if (chbKoseviPogodeno.Checked) { kos_sut.Pogodak = true; this.Pogodeno_popup = true; }
+                else { kos_sut.Pogodak = false; this.Pogodeno_popup = false; }
+                this.status = true;
             }
             DB_connection.OpenConn();
             DB_PUT.Kosevi_Put(kos_sut);

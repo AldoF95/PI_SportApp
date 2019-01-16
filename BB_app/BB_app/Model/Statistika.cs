@@ -24,7 +24,7 @@ namespace BB_app.Model
             {
                 if(i.Pogodak == true) { pogodeno++; }
             }
-            Postotak_suteva = pogodeno / sutevi.Count();
+            this.Postotak_suteva = pogodeno / sutevi.Count();
         }
         public void Izracun_postotka_prisutnosti()
         {
@@ -34,11 +34,15 @@ namespace BB_app.Model
             DB_connection.CloseConn();
 
             int count = 0;
-            foreach(var i in pri)
+            if(pri.Count != 0)
             {
-                if (i.Prisutan == true) { count++; }
+                foreach (var i in pri)
+                {
+                    if (i.Prisutan == true) { count++; }
+                }
+                this.Postotak_prisutnost = count / pri.Count();
             }
-            Postotak_prisutnost = count / pri.Count();
+            
         }
 
     }

@@ -17,7 +17,7 @@ namespace BB_app.View
         Igraci igr;
         public Mjerenja_popup(Igraci igrac, int X, int Y)
         {
-            this.Location = new Point(X+200, Y);
+            this.Location = new Point(X+200, Y+20);
             InitializeComponent();
             igr = igrac;
             lblMjerenjaIgrac.Text = igrac.Ime.ToString();
@@ -41,6 +41,7 @@ namespace BB_app.View
             DB_connection.OpenConn();
             DB_PUT.Statistika_Put(stat);
             DB_connection.CloseConn();
+            this.Close();
         }
 
         private void btnMjereneIzadi_Click(object sender, EventArgs e)

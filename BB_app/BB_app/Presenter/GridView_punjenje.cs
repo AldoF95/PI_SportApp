@@ -62,7 +62,7 @@ namespace BB_app.Presenter
             DB_connection.CloseConn();
 
             var collection = new ObservableCollection<Igraci>(igr); //stvaranje kolekcije...preko presentera
-            collection.CollectionChanged += Collection_CollectionChanged;
+            //collection.CollectionChanged += Collection_CollectionChanged;
             datasource = new BindingSource(collection, null); //vezanje kolekcije za datasource
             //postavljanje vidljivih stupaca
             gv.Columns[0].HeaderText = "Ime";
@@ -90,7 +90,7 @@ namespace BB_app.Presenter
             DB_connection.CloseConn();
 
             var collection = new ObservableCollection<Ekipa>(ek);
-            collection.CollectionChanged += Collection_CollectionChangedE;
+            //collection.CollectionChanged += Collection_CollectionChangedE;
             datasource = new BindingSource(collection, null);
 
             gv.ColumnCount = 1;
@@ -116,7 +116,7 @@ namespace BB_app.Presenter
             DB_connection.CloseConn();
 
             var collection = new ObservableCollection<Igraci>(igr);
-            collection.CollectionChanged += Collection_CollectionChanged;
+            //collection.CollectionChanged += Collection_CollectionChanged;
             datasource = new BindingSource(collection, null);
 
             gv.ColumnCount = 2;
@@ -150,5 +150,7 @@ namespace BB_app.Presenter
                 foreach(Igraci i in e.NewItems) { i.Ime = "Novi igrac"; }
             }
         }
+
+
     }
 }

@@ -64,7 +64,7 @@ namespace BB_app.Model.DB
             {
                 Trening t = new Trening();
                 t.Id = Convert.ToInt32(reader["ID"]);
-                t.Datum = (DateTime) reader["Datum"];
+                t.Datum = DateTime.Parse(reader["Datum"].ToString());
                 if (reader["Naziv"].GetType() != typeof(DBNull)) { t.Naziv = (string)reader["Naziv"]; }
                 if (reader["Br_vjezbi"].GetType() != typeof(DBNull)) { t.Br_Vjezbi = Convert.ToInt32(reader["Br_vjezbi"]); }
 
@@ -85,7 +85,6 @@ namespace BB_app.Model.DB
             {
                 Trening t = new Trening();
                 t.Id = Convert.ToInt32(reader["ID"]);
-                t.Datum = (DateTime)reader["Datum"];
                 if (reader["Naziv"].GetType() != typeof(DBNull)) { t.Naziv = (string)reader["Naziv"]; }
                 if (reader["Br_vjezbi"].GetType() != typeof(DBNull)) { t.Br_Vjezbi = Convert.ToInt32(reader["Br_vjezbi"]); }
 
@@ -146,7 +145,7 @@ namespace BB_app.Model.DB
             var lista = new List<Prisutnost>();
 
             SQLiteCommand com = DB_connection.conn.CreateCommand();
-            com.CommandText = String.Format(@"SELECT * FROM PRISUTNOST WHERE Trening_ID = {0}", t_id);//get where ID is wanted id
+            com.CommandText = String.Format(@"SELECT * FROM PRISUTNOST WHERE Igrac_ID = {0}", t_id);//get where ID is wanted id
             SQLiteDataReader reader = com.ExecuteReader();
             while (reader.Read())
             {
@@ -274,7 +273,7 @@ namespace BB_app.Model.DB
 
             return lista;
         }
-        public static List<Statistika> Zapisnik_Get_By_Id(int i_id, char type)
+        public static List<Statistika> Statistika_Get_By_Id(int i_id, char type)
         {
             var lista = new List<Statistika>();
 

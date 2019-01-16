@@ -35,14 +35,14 @@ namespace BB_app.View
             new Unos().Show();
         }
 
-        private void btnPocetnaKosevi_Click(object sender, EventArgs e)
-        {
-            new Prikaz_suteva().Show();
-        }
-
         private void btnZapisnik_Click(object sender, EventArgs e)
         {
             new Zapisnik_unos().Show();
+        }
+
+        private void btnPocetnaStatistika_Click(object sender, EventArgs e)
+        {
+            new Statistika_prikaz().Show();
         }
     }
 }
