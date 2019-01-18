@@ -88,6 +88,12 @@
     <Compile Include="Presenter\PrikazSuteva_pozicije.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\Brisanje_popup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Brisanje_popup.Designer.cs">
+      <DependentUpon>Brisanje_popup.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\KoseviSut.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,6 +170,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="View\Brisanje_popup.resx">
+      <DependentUpon>Brisanje_popup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\KoseviSut.resx">
       <DependentUpon>KoseviSut.cs</DependentUpon>
     </EmbeddedResource>

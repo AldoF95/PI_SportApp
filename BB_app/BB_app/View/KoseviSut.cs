@@ -25,7 +25,7 @@ namespace BB_app.View
             InitializeComponent();
             s = source;
             //grid view se generira ovisno o izvoru (ekipa ili igraci)
-            gridView = new GridView_punjenje(source, ek_id);
+            gridView = new GridView_punjenje(source, 12, 12);
             this.Controls.Add(gridView.gv); //dodavanje novog grid view (kontrole) na formu
 
         }

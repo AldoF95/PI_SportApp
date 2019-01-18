@@ -19,7 +19,7 @@ namespace BB_app.Model
 
         public void Izracun_postotka_suteva(List<Kosevi> sutevi)
         {
-            int pogodeno = 0;
+            decimal pogodeno = 0;
             foreach(var i in sutevi)
             {
                 if(i.Pogodak == true) { pogodeno++; }
@@ -33,7 +33,7 @@ namespace BB_app.Model
             pri = DB_GET.Prisutnost_Get_By_Id(Entity_Id);
             DB_connection.CloseConn();
 
-            int count = 0;
+            decimal count = 0;
             if(pri.Count != 0)
             {
                 foreach (var i in pri)

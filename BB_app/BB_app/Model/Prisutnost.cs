@@ -11,8 +11,8 @@ namespace BB_app.Model
         public int Id { get; set; }
         public int Igrac_id { get; set; }
         public int Trening_id { get; set; }
-        public List<Igraci> Igraci_prisut = new List<Igraci>();
         public bool Prisutan { get; set; }
+        public List<Igraci> Igraci_prisut = new List<Igraci>();
         public string Trening_prisut { get; set; }
 
         public Prisutnost()

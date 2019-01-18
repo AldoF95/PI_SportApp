@@ -182,5 +182,10 @@ namespace BB_app.View
             DB_PUT.Ekipa_Put(ek);
             DB_connection.CloseConn();
         }
+
+        private void btnUnosBrisi_Click(object sender, EventArgs e)
+        {
+            new Brisanje_popup().Show();
+        }
     }
 }

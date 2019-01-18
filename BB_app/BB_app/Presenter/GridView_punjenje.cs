@@ -23,11 +23,11 @@ namespace BB_app.Presenter
         public DataGridView gv; 
 
         //konstruktor prima izvor podataka, i id ekipe za prikaz ekipe
-        public GridView_punjenje(char source, int ek_id)
+        public GridView_punjenje(char source, int X, int Y)
         {
             gv = new DataGridView(); //novi grid view
             gv.AutoGenerateColumns = false; //da se moze rucno postaviti stupci
-            gv.Location = new System.Drawing.Point(12, 12);//pozicija pojave gv
+            gv.Location = new System.Drawing.Point(X, Y);//pozicija pojave gv
             //kreiranje ovisno o izvoru
             switch (source)
             {
@@ -39,11 +39,6 @@ namespace BB_app.Presenter
                 case 'E':
                     {
                         gvEkipe();
-                        break;
-                    }
-                case 'Z':
-                    {
-                        gvEkipaByIgrac(ek_id);
                         break;
                     }
             }
@@ -70,7 +65,7 @@ namespace BB_app.Presenter
             gv.Columns[1].HeaderText = "Prezime";
             gv.Columns[1].DataPropertyName = "Prezime";
             
-            //arrow funkcija (google it)....za dobivanje igraca kojeg se kliknulo u grid view 
+            //lambda funkcija (google it)....za dobivanje igraca kojeg se kliknulo u grid view 
             //s -> sender, e -> click argument
             gv.CellClick += (s, e) =>
             {
@@ -108,33 +103,6 @@ namespace BB_app.Presenter
             gv.AllowUserToAddRows = false;
         }
 
-        private void gvEkipaByIgrac(int ek_id)
-        {
-            igr = new List<Igraci>();
-            DB_connection.OpenConn();
-            igr = DB_GET.Ekipa_Get_By_Id(ek_id);
-            DB_connection.CloseConn();
-
-            var collection = new ObservableCollection<Igraci>(igr);
-            //collection.CollectionChanged += Collection_CollectionChanged;
-            datasource = new BindingSource(collection, null);
-
-            gv.ColumnCount = 2;
-            gv.Columns[0].HeaderText = "Ime";
-            gv.Columns[0].DataPropertyName = "Ime";
-            gv.Columns[1].HeaderText = "Prezime";
-            gv.Columns[1].DataPropertyName = "Prezime";
-
-            gv.CellClick += (s, e) =>
-            {
-                igrac_id = (Igraci)this.igr[e.RowIndex];
-            };
-
-            gv.DataSource = datasource;
-            gv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            gv.AutoResizeColumns();
-            gv.AllowUserToAddRows = false;
-        }
         private void Collection_CollectionChangedE(object sender, NotifyCollectionChangedEventArgs e)
         {
             if (e.Action == NotifyCollectionChangedAction.Add)

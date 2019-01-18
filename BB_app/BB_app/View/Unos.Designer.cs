@@ -43,6 +43,8 @@
             this.chbUnosIgr01 = new MetroFramework.Controls.MetroCheckBox();
             this.btnUnosIgrPut = new MetroFramework.Controls.MetroButton();
             this.panelUnosIgr = new MetroFramework.Controls.MetroPanel();
+            this.lblUnosIgr06 = new MetroFramework.Controls.MetroLabel();
+            this.cmbUnosIgr01 = new MetroFramework.Controls.MetroComboBox();
             this.lblUnosIgraca05 = new MetroFramework.Controls.MetroLabel();
             this.btnUnosIgraca02 = new MetroFramework.Controls.MetroButton();
             this.panelUnosVj = new MetroFramework.Controls.MetroPanel();
@@ -69,8 +71,6 @@
             this.lblUnosEkipe02 = new MetroFramework.Controls.MetroLabel();
             this.lblUnosEkipa01 = new MetroFramework.Controls.MetroLabel();
             this.btnUnosBrisi = new MetroFramework.Controls.MetroButton();
-            this.cmbUnosIgr01 = new MetroFramework.Controls.MetroComboBox();
-            this.lblUnosIgr06 = new MetroFramework.Controls.MetroLabel();
             this.panelUnosIgr.SuspendLayout();
             this.panelUnosVj.SuspendLayout();
             this.panelUnosEkipa.SuspendLayout();
@@ -316,6 +316,27 @@
             this.panelUnosIgr.VerticalScrollbarHighlightOnWheel = false;
             this.panelUnosIgr.VerticalScrollbarSize = 10;
             this.panelUnosIgr.Visible = false;
+            // 
+            // lblUnosIgr06
+            // 
+            this.lblUnosIgr06.AutoSize = true;
+            this.lblUnosIgr06.BackColor = System.Drawing.Color.Transparent;
+            this.lblUnosIgr06.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.lblUnosIgr06.Location = new System.Drawing.Point(50, 349);
+            this.lblUnosIgr06.Name = "lblUnosIgr06";
+            this.lblUnosIgr06.Size = new System.Drawing.Size(46, 20);
+            this.lblUnosIgr06.TabIndex = 17;
+            this.lblUnosIgr06.Text = "Ekipa";
+            // 
+            // cmbUnosIgr01
+            // 
+            this.cmbUnosIgr01.FormattingEnabled = true;
+            this.cmbUnosIgr01.ItemHeight = 24;
+            this.cmbUnosIgr01.Location = new System.Drawing.Point(125, 339);
+            this.cmbUnosIgr01.Name = "cmbUnosIgr01";
+            this.cmbUnosIgr01.Size = new System.Drawing.Size(180, 30);
+            this.cmbUnosIgr01.TabIndex = 16;
+            this.cmbUnosIgr01.UseSelectable = true;
             // 
             // lblUnosIgraca05
             // 
@@ -751,27 +772,7 @@
             this.btnUnosBrisi.Text = "Brisanje";
             this.btnUnosBrisi.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.btnUnosBrisi.UseSelectable = true;
-            // 
-            // cmbUnosIgr01
-            // 
-            this.cmbUnosIgr01.FormattingEnabled = true;
-            this.cmbUnosIgr01.ItemHeight = 24;
-            this.cmbUnosIgr01.Location = new System.Drawing.Point(125, 339);
-            this.cmbUnosIgr01.Name = "cmbUnosIgr01";
-            this.cmbUnosIgr01.Size = new System.Drawing.Size(180, 30);
-            this.cmbUnosIgr01.TabIndex = 16;
-            this.cmbUnosIgr01.UseSelectable = true;
-            // 
-            // lblUnosIgr06
-            // 
-            this.lblUnosIgr06.AutoSize = true;
-            this.lblUnosIgr06.BackColor = System.Drawing.Color.Transparent;
-            this.lblUnosIgr06.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.lblUnosIgr06.Location = new System.Drawing.Point(50, 349);
-            this.lblUnosIgr06.Name = "lblUnosIgr06";
-            this.lblUnosIgr06.Size = new System.Drawing.Size(46, 20);
-            this.lblUnosIgr06.TabIndex = 17;
-            this.lblUnosIgr06.Text = "Ekipa";
+            this.btnUnosBrisi.Click += new System.EventHandler(this.btnUnosBrisi_Click);
             // 
             // Unos
             // 
@@ -780,9 +781,9 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 550);
+            this.Controls.Add(this.btnUnosBrisi);
             this.Controls.Add(this.panelUnosIgr);
             this.Controls.Add(this.btnUnosVjezba);
-            this.Controls.Add(this.btnUnosBrisi);
             this.Controls.Add(this.btnUnosEkipa);
             this.Controls.Add(this.btnUnosIgrac);
             this.Controls.Add(this.panelUnosEkipa);

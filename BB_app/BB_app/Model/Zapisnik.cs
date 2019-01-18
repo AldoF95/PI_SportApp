@@ -11,10 +11,10 @@ namespace BB_app.Model
         public int Id { get; set; }
         public DateTime Datum { get; set; }
         public int Ekipa_id { get; set; }
-        public string Ekipa_dom { get; set; }
         public string Ekipa_gost { get; set; }
         public int Rez_gost { get; set; }
         public int Rez_dom { get; set; }
+        public string Ekipa_dom { get; set; }
 
         public Zapisnik() { }
     }

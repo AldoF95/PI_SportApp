@@ -14,6 +14,8 @@ namespace BB_app.Model
         public string Prezime { get; set; }
         public int Godiste { get; set; }
         public char Spol { get; set; }
+        public bool Karton { get; set; }
+        public int Ekipa_id { get; set; }
         public bool Prisutnost { get; set; }
         public decimal Visina { get; set; }
         public decimal Tezina { get; set; }
@@ -21,9 +23,7 @@ namespace BB_app.Model
         public decimal Brz_Spr { get; set; }
         public decimal Brz_SU { get; set; }
         public decimal Skok_ud { get; set; }
-        public bool Karton { get; set; }
         public bool Prvo_mjerenje { get; set; }
-        public int Ekipa_id { get; set; }
         public string Ekipa_naziv { get; set; }
 
         public Igraci() { }
