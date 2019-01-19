@@ -71,18 +71,21 @@
             this.lblUnosEkipe02 = new MetroFramework.Controls.MetroLabel();
             this.lblUnosEkipa01 = new MetroFramework.Controls.MetroLabel();
             this.btnUnosBrisi = new MetroFramework.Controls.MetroButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblUnosResult = new System.Windows.Forms.Label();
             this.panelUnosIgr.SuspendLayout();
             this.panelUnosVj.SuspendLayout();
             this.panelUnosEkipa.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnUnosIgrac
             // 
             this.btnUnosIgrac.BackColor = System.Drawing.SystemColors.Control;
             this.btnUnosIgrac.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.btnUnosIgrac.Location = new System.Drawing.Point(12, 28);
+            this.btnUnosIgrac.Location = new System.Drawing.Point(182, 102);
             this.btnUnosIgrac.Name = "btnUnosIgrac";
-            this.btnUnosIgrac.Size = new System.Drawing.Size(250, 180);
+            this.btnUnosIgrac.Size = new System.Drawing.Size(200, 160);
             this.btnUnosIgrac.TabIndex = 0;
             this.btnUnosIgrac.Text = "Novi Igrač";
             this.btnUnosIgrac.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -92,9 +95,9 @@
             // btnUnosVjezba
             // 
             this.btnUnosVjezba.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.btnUnosVjezba.Location = new System.Drawing.Point(12, 216);
+            this.btnUnosVjezba.Location = new System.Drawing.Point(407, 102);
             this.btnUnosVjezba.Name = "btnUnosVjezba";
-            this.btnUnosVjezba.Size = new System.Drawing.Size(250, 180);
+            this.btnUnosVjezba.Size = new System.Drawing.Size(200, 160);
             this.btnUnosVjezba.TabIndex = 1;
             this.btnUnosVjezba.Text = "Nova Vježba";
             this.btnUnosVjezba.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -308,7 +311,7 @@
             this.panelUnosIgr.HorizontalScrollbarBarColor = true;
             this.panelUnosIgr.HorizontalScrollbarHighlightOnWheel = false;
             this.panelUnosIgr.HorizontalScrollbarSize = 10;
-            this.panelUnosIgr.Location = new System.Drawing.Point(113, 12);
+            this.panelUnosIgr.Location = new System.Drawing.Point(728, 102);
             this.panelUnosIgr.Name = "panelUnosIgr";
             this.panelUnosIgr.Size = new System.Drawing.Size(343, 461);
             this.panelUnosIgr.TabIndex = 14;
@@ -381,7 +384,7 @@
             this.panelUnosVj.HorizontalScrollbarBarColor = true;
             this.panelUnosVj.HorizontalScrollbarHighlightOnWheel = false;
             this.panelUnosVj.HorizontalScrollbarSize = 10;
-            this.panelUnosVj.Location = new System.Drawing.Point(226, 12);
+            this.panelUnosVj.Location = new System.Drawing.Point(677, 78);
             this.panelUnosVj.Name = "panelUnosVj";
             this.panelUnosVj.Size = new System.Drawing.Size(374, 478);
             this.panelUnosVj.TabIndex = 15;
@@ -609,9 +612,9 @@
             // 
             this.btnUnosEkipa.AutoSize = true;
             this.btnUnosEkipa.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.btnUnosEkipa.Location = new System.Drawing.Point(12, 405);
+            this.btnUnosEkipa.Location = new System.Drawing.Point(182, 280);
             this.btnUnosEkipa.Name = "btnUnosEkipa";
-            this.btnUnosEkipa.Size = new System.Drawing.Size(120, 85);
+            this.btnUnosEkipa.Size = new System.Drawing.Size(200, 160);
             this.btnUnosEkipa.TabIndex = 2;
             this.btnUnosEkipa.Text = "Nova Ekipa";
             this.btnUnosEkipa.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -632,7 +635,7 @@
             this.panelUnosEkipa.HorizontalScrollbarBarColor = true;
             this.panelUnosEkipa.HorizontalScrollbarHighlightOnWheel = false;
             this.panelUnosEkipa.HorizontalScrollbarSize = 10;
-            this.panelUnosEkipa.Location = new System.Drawing.Point(64, 114);
+            this.panelUnosEkipa.Location = new System.Drawing.Point(634, 170);
             this.panelUnosEkipa.Name = "panelUnosEkipa";
             this.panelUnosEkipa.Size = new System.Drawing.Size(357, 273);
             this.panelUnosEkipa.TabIndex = 16;
@@ -765,14 +768,38 @@
             // 
             this.btnUnosBrisi.AutoSize = true;
             this.btnUnosBrisi.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.btnUnosBrisi.Location = new System.Drawing.Point(138, 405);
+            this.btnUnosBrisi.Location = new System.Drawing.Point(407, 280);
             this.btnUnosBrisi.Name = "btnUnosBrisi";
-            this.btnUnosBrisi.Size = new System.Drawing.Size(120, 85);
+            this.btnUnosBrisi.Size = new System.Drawing.Size(200, 160);
             this.btnUnosBrisi.TabIndex = 17;
             this.btnUnosBrisi.Text = "Brisanje";
             this.btnUnosBrisi.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.btnUnosBrisi.UseSelectable = true;
             this.btnUnosBrisi.Click += new System.EventHandler(this.btnUnosBrisi_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(728, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(60, 60);
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
+            // 
+            // lblUnosResult
+            // 
+            this.lblUnosResult.AutoSize = true;
+            this.lblUnosResult.BackColor = System.Drawing.Color.Transparent;
+            this.lblUnosResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUnosResult.ForeColor = System.Drawing.Color.LimeGreen;
+            this.lblUnosResult.Location = new System.Drawing.Point(182, 510);
+            this.lblUnosResult.Name = "lblUnosResult";
+            this.lblUnosResult.Size = new System.Drawing.Size(53, 20);
+            this.lblUnosResult.TabIndex = 19;
+            this.lblUnosResult.Text = "label1";
+            this.lblUnosResult.Visible = false;
             // 
             // Unos
             // 
@@ -781,6 +808,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 550);
+            this.Controls.Add(this.lblUnosResult);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panelUnosIgr);
             this.Controls.Add(this.btnUnosBrisi);
             this.Controls.Add(this.btnUnosVjezba);
@@ -788,14 +817,16 @@
             this.Controls.Add(this.btnUnosIgrac);
             this.Controls.Add(this.panelUnosEkipa);
             this.Controls.Add(this.panelUnosVj);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Unos";
-            this.Text = "Unos";
+            this.Text = "BBStat - Unos";
             this.panelUnosIgr.ResumeLayout(false);
             this.panelUnosIgr.PerformLayout();
             this.panelUnosVj.ResumeLayout(false);
             this.panelUnosVj.PerformLayout();
             this.panelUnosEkipa.ResumeLayout(false);
             this.panelUnosEkipa.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -845,5 +876,7 @@
         private MetroFramework.Controls.MetroButton btnUnosBrisi;
         private MetroFramework.Controls.MetroLabel lblUnosIgr06;
         private MetroFramework.Controls.MetroComboBox cmbUnosIgr01;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblUnosResult;
     }
 }

@@ -139,7 +139,7 @@ namespace BB_app.View
         //otvaranje prozora sa unosom mjerenja
         private void btnDashboardMjerenja_Click(object sender, EventArgs e)
         {
-            new Mjerenja_popup(igrac_odabran, this.DesktopLocation.X, this.DesktopLocation.Y).Show();
+            new Mjerenja_popup(igrac_odabran, this.DesktopLocation.X+btnDashboardBrzina.Width, this.DesktopLocation.Y).Show();
         }
         //kraj treninga i spremanje podataka
         private void btnDashboardKraj_Click(object sender, EventArgs e)

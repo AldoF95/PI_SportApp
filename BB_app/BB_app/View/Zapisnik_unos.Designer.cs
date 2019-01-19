@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Zapisnik_unos));
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.txtbZapisnik03 = new MetroFramework.Controls.MetroTextBox();
             this.txtbZapisnik02 = new MetroFramework.Controls.MetroTextBox();
@@ -41,7 +42,10 @@
             this.btnZapisnik02 = new MetroFramework.Controls.MetroButton();
             this.calendarZapisnik = new System.Windows.Forms.MonthCalendar();
             this.btnZapisnik03 = new MetroFramework.Controls.MetroButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblZapisnikResult = new System.Windows.Forms.Label();
             this.metroPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // metroPanel1
@@ -253,6 +257,29 @@
             this.btnZapisnik03.UseSelectable = true;
             this.btnZapisnik03.Click += new System.EventHandler(this.btnZapisnik03_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(785, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(60, 60);
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
+            // lblZapisnikResult
+            // 
+            this.lblZapisnikResult.AutoSize = true;
+            this.lblZapisnikResult.BackColor = System.Drawing.Color.Transparent;
+            this.lblZapisnikResult.ForeColor = System.Drawing.Color.White;
+            this.lblZapisnikResult.Location = new System.Drawing.Point(66, 579);
+            this.lblZapisnikResult.Name = "lblZapisnikResult";
+            this.lblZapisnikResult.Size = new System.Drawing.Size(46, 17);
+            this.lblZapisnikResult.TabIndex = 6;
+            this.lblZapisnikResult.Text = "label1";
+            this.lblZapisnikResult.Visible = false;
+            // 
             // Zapisnik_unos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -260,16 +287,21 @@
             this.BackgroundImage = global::BB_app.Properties.Resources._1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(857, 605);
+            this.Controls.Add(this.lblZapisnikResult);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnZapisnik03);
             this.Controls.Add(this.calendarZapisnik);
             this.Controls.Add(this.btnZapisnik02);
             this.Controls.Add(this.btnZapisnik01);
             this.Controls.Add(this.metroPanel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Zapisnik_unos";
-            this.Text = "Zapisnik";
+            this.Text = "BBStat - Zapisnik";
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -288,5 +320,7 @@
         private MetroFramework.Controls.MetroLabel lblZapisnik03;
         private MetroFramework.Controls.MetroLabel lblZapisnik02;
         private MetroFramework.Controls.MetroLabel lblZapisnik01;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblZapisnikResult;
     }
 }

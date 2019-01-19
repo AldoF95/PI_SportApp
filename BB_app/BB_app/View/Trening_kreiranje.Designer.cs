@@ -28,16 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Trening_kreiranje));
             this.cmbTreningKreiraj01 = new MetroFramework.Controls.MetroComboBox();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
-            this.lblTreningKreiraj01 = new MetroFramework.Controls.MetroLabel();
-            this.txtbTreningKreiraj01 = new MetroFramework.Controls.MetroTextBox();
             this.calendarTreningKreiraj01 = new System.Windows.Forms.MonthCalendar();
+            this.txtbTreningKreiraj01 = new MetroFramework.Controls.MetroTextBox();
+            this.lblTreningKreiraj01 = new MetroFramework.Controls.MetroLabel();
             this.dgvTreningKreiraj01 = new System.Windows.Forms.DataGridView();
             this.lblZapisnikKreiraj02 = new MetroFramework.Controls.MetroLabel();
             this.btnTreningKreiraj01 = new MetroFramework.Controls.MetroButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblTreningKreirajResult = new System.Windows.Forms.Label();
             this.metroPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTreningKreiraj01)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbTreningKreiraj01
@@ -67,15 +71,12 @@
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
             // 
-            // lblTreningKreiraj01
+            // calendarTreningKreiraj01
             // 
-            this.lblTreningKreiraj01.AutoSize = true;
-            this.lblTreningKreiraj01.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.lblTreningKreiraj01.Location = new System.Drawing.Point(41, 34);
-            this.lblTreningKreiraj01.Name = "lblTreningKreiraj01";
-            this.lblTreningKreiraj01.Size = new System.Drawing.Size(111, 20);
-            this.lblTreningKreiraj01.TabIndex = 2;
-            this.lblTreningKreiraj01.Text = "Naziv treninga";
+            this.calendarTreningKreiraj01.FirstDayOfWeek = System.Windows.Forms.Day.Monday;
+            this.calendarTreningKreiraj01.Location = new System.Drawing.Point(106, 104);
+            this.calendarTreningKreiraj01.Name = "calendarTreningKreiraj01";
+            this.calendarTreningKreiraj01.TabIndex = 4;
             // 
             // txtbTreningKreiraj01
             // 
@@ -108,12 +109,15 @@
             this.txtbTreningKreiraj01.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtbTreningKreiraj01.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // calendarTreningKreiraj01
+            // lblTreningKreiraj01
             // 
-            this.calendarTreningKreiraj01.FirstDayOfWeek = System.Windows.Forms.Day.Monday;
-            this.calendarTreningKreiraj01.Location = new System.Drawing.Point(106, 104);
-            this.calendarTreningKreiraj01.Name = "calendarTreningKreiraj01";
-            this.calendarTreningKreiraj01.TabIndex = 4;
+            this.lblTreningKreiraj01.AutoSize = true;
+            this.lblTreningKreiraj01.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.lblTreningKreiraj01.Location = new System.Drawing.Point(41, 34);
+            this.lblTreningKreiraj01.Name = "lblTreningKreiraj01";
+            this.lblTreningKreiraj01.Size = new System.Drawing.Size(111, 20);
+            this.lblTreningKreiraj01.TabIndex = 2;
+            this.lblTreningKreiraj01.Text = "Naziv treninga";
             // 
             // dgvTreningKreiraj01
             // 
@@ -147,6 +151,30 @@
             this.btnTreningKreiraj01.UseSelectable = true;
             this.btnTreningKreiraj01.Click += new System.EventHandler(this.btnTreningKreiraj01_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(977, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(60, 60);
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
+            // lblTreningKreirajResult
+            // 
+            this.lblTreningKreirajResult.AutoSize = true;
+            this.lblTreningKreirajResult.BackColor = System.Drawing.Color.Transparent;
+            this.lblTreningKreirajResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTreningKreirajResult.ForeColor = System.Drawing.Color.Red;
+            this.lblTreningKreirajResult.Location = new System.Drawing.Point(104, 602);
+            this.lblTreningKreirajResult.Name = "lblTreningKreirajResult";
+            this.lblTreningKreirajResult.Size = new System.Drawing.Size(46, 18);
+            this.lblTreningKreirajResult.TabIndex = 6;
+            this.lblTreningKreirajResult.Text = "label1";
+            this.lblTreningKreirajResult.Visible = false;
+            // 
             // Trening_kreiranje
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -154,6 +182,8 @@
             this.BackgroundImage = global::BB_app.Properties.Resources._1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1049, 631);
+            this.Controls.Add(this.lblTreningKreirajResult);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnTreningKreiraj01);
             this.Controls.Add(this.dgvTreningKreiraj01);
             this.Controls.Add(this.lblZapisnikKreiraj02);
@@ -161,10 +191,11 @@
             this.Controls.Add(this.cmbTreningKreiraj01);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Trening_kreiranje";
-            this.Text = "Trening_kreiranje";
+            this.Text = "BBStat - Kreiranje treninga";
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTreningKreiraj01)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -180,5 +211,7 @@
         private System.Windows.Forms.DataGridView dgvTreningKreiraj01;
         private MetroFramework.Controls.MetroLabel lblZapisnikKreiraj02;
         private MetroFramework.Controls.MetroButton btnTreningKreiraj01;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblTreningKreirajResult;
     }
 }

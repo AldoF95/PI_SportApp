@@ -107,7 +107,7 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(174, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(259, 9);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(60, 60);
             this.pictureBox1.TabIndex = 4;
@@ -119,11 +119,11 @@
             this.lblPocetnaName.BackColor = System.Drawing.Color.Transparent;
             this.lblPocetnaName.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPocetnaName.ForeColor = System.Drawing.Color.White;
-            this.lblPocetnaName.Location = new System.Drawing.Point(246, 12);
+            this.lblPocetnaName.Location = new System.Drawing.Point(331, 9);
             this.lblPocetnaName.Name = "lblPocetnaName";
-            this.lblPocetnaName.Size = new System.Drawing.Size(362, 58);
+            this.lblPocetnaName.Size = new System.Drawing.Size(180, 58);
             this.lblPocetnaName.TabIndex = 5;
-            this.lblPocetnaName.Text = "BASKET STAT";
+            this.lblPocetnaName.Text = "BBStat";
             // 
             // Pocetna
             // 
@@ -141,7 +141,7 @@
             this.Controls.Add(this.btnTrening);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Pocetna";
-            this.Text = "Pocetna";
+            this.Text = "BBStat - Početna";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

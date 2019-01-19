@@ -17,7 +17,7 @@ namespace BB_app.View
         Igraci igr;
         public Mjerenja_popup(Igraci igrac, int X, int Y)
         {
-            this.Location = new Point(X+200, Y+20);
+            this.Location = new Point(X, Y);
             InitializeComponent();
             igr = igrac;
             lblMjerenjaIgrac.Text = igrac.Ime.ToString();
@@ -37,16 +37,39 @@ namespace BB_app.View
             stat.Skok_ud = Int32.Parse(txtbMjerenjeSkok.Text);
             if (chcbMjerenjePrvo.Checked) { stat.Prvo_mjerenje = true; }
             else { stat.Prvo_mjerenje = false; }
-            //spremanje podataka
-            DB_connection.OpenConn();
-            DB_PUT.Statistika_Put(stat);
-            DB_connection.CloseConn();
-            this.Close();
+
+            try
+            {
+                //spremanje podataka
+                DB_connection.OpenConn();
+                DB_PUT.Statistika_Put(stat);
+                DB_connection.CloseConn();
+                this.Close();
+            }
+            catch (ArgumentException err)
+            {
+                Change_label("Greška kod spremanja podataka: " + err.ToString());
+            }
+            
         }
 
         private void btnMjereneIzadi_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Change_label(string str)
+        {
+            lblMjerenjaResult.Text = str.ToString();
+            lblMjerenjaResult.Visible = true;
+            var t = new Timer();
+            t.Interval = 3000;
+            t.Start();
+            t.Tick += (s, e) =>
+            {
+                lblMjerenjaResult.Visible = false;
+                t.Stop();
+            };
         }
     }
 }

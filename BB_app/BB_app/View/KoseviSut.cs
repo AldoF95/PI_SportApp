@@ -65,7 +65,38 @@ namespace BB_app.View
             var formX = this.DesktopLocation.X;
             var formY = this.DesktopLocation.Y;
             //salje se na popup fomu
-            new Kosevi_popup(X, Y, formX, formY, kos).Show();
+            try
+            {
+                using (var form = new Kosevi_popup(X, Y, formX, formY, kos))
+                {
+                    form.ShowDialog();
+                    if (form.status == true)
+                    {
+                        Change_label("Šut je zabilježen");
+                    }
+                }
+            }
+            catch (ArgumentException err)
+            {
+                Change_label("greška kod unosa šuta: " + err.ToString());
+            }
+
+            
+
+        }
+
+        private void Change_label(string str)
+        {
+            lblKoseviResult.Text = str.ToString();
+            lblKoseviResult.Visible = true;
+            var t = new Timer();
+            t.Interval = 3000;
+            t.Start();
+            t.Tick += (s, e) =>
+            {
+                lblKoseviResult.Visible = false;
+                t.Stop();
+            };
         }
 
     }

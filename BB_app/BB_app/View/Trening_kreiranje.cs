@@ -27,10 +27,18 @@ namespace BB_app.View
 
             ek = new List<Ekipa>();
             vj = new List<Vjezbe>();
-            DB_connection.OpenConn();
-            ek = DB_GET.Ekipa_Get_All();
-            vj = DB_GET.Vjezbe_Get_All();
-            DB_connection.CloseConn();
+            try
+            {
+                DB_connection.OpenConn();
+                ek = DB_GET.Ekipa_Get_All();
+                vj = DB_GET.Vjezbe_Get_All();
+                DB_connection.CloseConn();
+            }
+            catch(ArgumentException err)
+            {
+                Change_label("Greška kod učitavanja podataka: " + err.ToString());
+            }
+            
 
             cmbTreningKreiraj01.Items.Clear();
             cmbTreningKreiraj01.DisplayMember = "Naziv";
@@ -59,9 +67,17 @@ namespace BB_app.View
             var todel = Controls.Find("gv", true);
             if (todel.Length != 0) { this.Controls.Remove(todel[0]); }
             igr = new List<Igraci>();
-            DB_connection.OpenConn();
-            igr = DB_GET.Ekipa_Get_By_Id(ek[cmbTreningKreiraj01.SelectedIndex].Id);
-            DB_connection.CloseConn();
+            try
+            {
+                DB_connection.OpenConn();
+                igr = DB_GET.Ekipa_Get_By_Id(ek[cmbTreningKreiraj01.SelectedIndex].Id);
+                DB_connection.CloseConn();
+            }
+            catch(ArgumentException err)
+            {
+                Change_label("Greška kod učitavanja podataka" + err.ToString());
+            }
+            
 
             gv = new DataGridView();
             gv.Name = "gv";
@@ -114,11 +130,19 @@ namespace BB_app.View
             }
             Trening tr = new Trening(txtbTreningKreiraj01.Text, (int)tren.Count);
             Trening tr_id = new Trening();
-            DB_connection.OpenConn();
-            DB_PUT.Trening_Put(tr);
-            tr_id = DB_GET.Trening_Get_Last_Add();
-            DB_connection.CloseConn();
-            tr.Id = tr_id.Id;
+            try
+            {
+                DB_connection.OpenConn();
+                DB_PUT.Trening_Put(tr);
+                tr_id = DB_GET.Trening_Get_Last_Add();
+                DB_connection.CloseConn();
+                tr.Id = tr_id.Id;
+            }
+            catch(ArgumentException err)
+            {
+                Change_label("Greška kod spremanja treninga" + err.ToString());
+            }
+           
 
             foreach (DataGridViewRow row in gv.Rows)
             {
@@ -132,14 +156,32 @@ namespace BB_app.View
                 }
                 pris.Add(p);
             }
-            DB_connection.OpenConn();
-            DB_PUT.Prisutnost_Put_List(pris);
-            DB_connection.CloseConn();
+            try
+            {
+                DB_connection.OpenConn();
+                DB_PUT.Prisutnost_Put_List(pris);
+                DB_connection.CloseConn();
+                new Trening_dashboard(tr, igrac, tren).Show();
+                this.Close();
+            }
+            catch(ArgumentException err)
+            {
+                Change_label("Greška kod spremanja prisutnosti: " + err.ToString());
+            }
 
-            new Trening_dashboard(tr, igrac, tren).Show();
-            this.Close();
-            
-
+        }
+        private void Change_label(string str)
+        {
+            lblTreningKreirajResult.Text = str.ToString();
+            lblTreningKreirajResult.Visible = true;
+            var t = new Timer();
+            t.Interval = 3000;
+            t.Start();
+            t.Tick += (s, e) =>
+            {
+                lblTreningKreirajResult.Visible = false;
+                t.Stop();
+            };
         }
     }
 }

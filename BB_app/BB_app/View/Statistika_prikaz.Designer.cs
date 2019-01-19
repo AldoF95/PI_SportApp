@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Statistika_prikaz));
             this.chartStatistikaVisina = new LiveCharts.WinForms.CartesianChart();
             this.cmbStatistikaOdabir = new MetroFramework.Controls.MetroComboBox();
             this.chartStatistikaTezina = new LiveCharts.WinForms.CartesianChart();
@@ -44,6 +45,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblStatistikaResult = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // chartStatistikaVisina
@@ -62,7 +66,7 @@
             this.cmbStatistikaOdabir.Items.AddRange(new object[] {
             "Igrači",
             "Ekipe"});
-            this.cmbStatistikaOdabir.Location = new System.Drawing.Point(72, 46);
+            this.cmbStatistikaOdabir.Location = new System.Drawing.Point(129, 43);
             this.cmbStatistikaOdabir.Name = "cmbStatistikaOdabir";
             this.cmbStatistikaOdabir.Size = new System.Drawing.Size(195, 30);
             this.cmbStatistikaOdabir.TabIndex = 2;
@@ -219,6 +223,29 @@
             this.label6.TabIndex = 16;
             this.label6.Text = "Prisutnost na treninzima";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 13);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(60, 60);
+            this.pictureBox1.TabIndex = 17;
+            this.pictureBox1.TabStop = false;
+            // 
+            // lblStatistikaResult
+            // 
+            this.lblStatistikaResult.AutoSize = true;
+            this.lblStatistikaResult.BackColor = System.Drawing.Color.Transparent;
+            this.lblStatistikaResult.ForeColor = System.Drawing.Color.Red;
+            this.lblStatistikaResult.Location = new System.Drawing.Point(13, 962);
+            this.lblStatistikaResult.Name = "lblStatistikaResult";
+            this.lblStatistikaResult.Size = new System.Drawing.Size(46, 17);
+            this.lblStatistikaResult.TabIndex = 18;
+            this.lblStatistikaResult.Text = "label1";
+            this.lblStatistikaResult.Visible = false;
+            // 
             // Statistika_prikaz
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -226,6 +253,8 @@
             this.BackgroundImage = global::BB_app.Properties.Resources._1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1836, 992);
+            this.Controls.Add(this.lblStatistikaResult);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
@@ -245,6 +274,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Statistika_prikaz";
             this.Text = "Statistika_prikaz";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -268,5 +298,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblStatistikaResult;
     }
 }

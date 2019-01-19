@@ -52,10 +52,12 @@
             this.lblPanelTitle = new System.Windows.Forms.Label();
             this.dgvDashboardIgraci = new System.Windows.Forms.DataGridView();
             this.lblDashboardResult = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picbDashboardTeren)).BeginInit();
             this.panelDashboardTimer.SuspendLayout();
             this.panelDashboardUnos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDashboardIgraci)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblDashboard01
@@ -334,13 +336,25 @@
             this.lblDashboardResult.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblDashboardResult.Visible = false;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(1277, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(60, 60);
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
+            // 
             // Trening_dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::BB_app.Properties.Resources._1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1282, 720);
+            this.ClientSize = new System.Drawing.Size(1358, 720);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblDashboardResult);
             this.Controls.Add(this.dgvDashboardIgraci);
             this.Controls.Add(this.panelDashboardUnos);
@@ -355,12 +369,13 @@
             this.Controls.Add(this.lblDashboard01);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Trening_dashboard";
-            this.Text = "Trening dashboard";
+            this.Text = "BBStat - Dashboard";
             ((System.ComponentModel.ISupportInitialize)(this.picbDashboardTeren)).EndInit();
             this.panelDashboardTimer.ResumeLayout(false);
             this.panelDashboardUnos.ResumeLayout(false);
             this.panelDashboardUnos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDashboardIgraci)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -389,5 +404,6 @@
         private System.Windows.Forms.Label lblPanelTitle;
         private System.Windows.Forms.DataGridView dgvDashboardIgraci;
         private System.Windows.Forms.Label lblDashboardResult;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -33,7 +33,9 @@
             this.piePrikazSuteva = new LiveCharts.WinForms.PieChart();
             this.chartPrikazSuteva = new LiveCharts.WinForms.CartesianChart();
             this.lblPrikazSutevaIme = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picbPrikazSutevaTeren)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // picbPrikazSutevaTeren
@@ -69,11 +71,22 @@
             this.lblPrikazSutevaIme.BackColor = System.Drawing.Color.Transparent;
             this.lblPrikazSutevaIme.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrikazSutevaIme.ForeColor = System.Drawing.Color.White;
-            this.lblPrikazSutevaIme.Location = new System.Drawing.Point(28, 14);
+            this.lblPrikazSutevaIme.Location = new System.Drawing.Point(108, 12);
             this.lblPrikazSutevaIme.Name = "lblPrikazSutevaIme";
             this.lblPrikazSutevaIme.Size = new System.Drawing.Size(364, 62);
             this.lblPrikazSutevaIme.TabIndex = 3;
             this.lblPrikazSutevaIme.Text = "label1";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(60, 60);
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
             // 
             // Prikaz_suteva
             // 
@@ -83,6 +96,7 @@
             this.BackgroundImage = global::BB_app.Properties.Resources._1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1384, 762);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblPrikazSutevaIme);
             this.Controls.Add(this.chartPrikazSuteva);
             this.Controls.Add(this.piePrikazSuteva);
@@ -91,6 +105,7 @@
             this.Name = "Prikaz_suteva";
             this.Text = "Prikaz_suteva";
             ((System.ComponentModel.ISupportInitialize)(this.picbPrikazSutevaTeren)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -101,5 +116,6 @@
         private LiveCharts.WinForms.PieChart piePrikazSuteva;
         private LiveCharts.WinForms.CartesianChart chartPrikazSuteva;
         private System.Windows.Forms.Label lblPrikazSutevaIme;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

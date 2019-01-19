@@ -48,6 +48,7 @@
             this.lblMjerenja07 = new MetroFramework.Controls.MetroLabel();
             this.btnMjerenjeUnos = new MetroFramework.Controls.MetroButton();
             this.btnMjereneIzadi = new MetroFramework.Controls.MetroButton();
+            this.lblMjerenjaResult = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -370,12 +371,25 @@
             this.btnMjereneIzadi.UseSelectable = true;
             this.btnMjereneIzadi.Click += new System.EventHandler(this.btnMjereneIzadi_Click);
             // 
+            // lblMjerenjaResult
+            // 
+            this.lblMjerenjaResult.AutoSize = true;
+            this.lblMjerenjaResult.BackColor = System.Drawing.Color.White;
+            this.lblMjerenjaResult.ForeColor = System.Drawing.Color.Black;
+            this.lblMjerenjaResult.Location = new System.Drawing.Point(31, 691);
+            this.lblMjerenjaResult.Name = "lblMjerenjaResult";
+            this.lblMjerenjaResult.Size = new System.Drawing.Size(46, 17);
+            this.lblMjerenjaResult.TabIndex = 19;
+            this.lblMjerenjaResult.Text = "label1";
+            this.lblMjerenjaResult.Visible = false;
+            // 
             // Mjerenja_popup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1100, 720);
+            this.Controls.Add(this.lblMjerenjaResult);
             this.Controls.Add(this.btnMjereneIzadi);
             this.Controls.Add(this.btnMjerenjeUnos);
             this.Controls.Add(this.txtbMjerenjeSkok);
@@ -426,5 +440,6 @@
         private MetroFramework.Controls.MetroLabel lblMjerenja07;
         private MetroFramework.Controls.MetroButton btnMjerenjeUnos;
         private MetroFramework.Controls.MetroButton btnMjereneIzadi;
+        private System.Windows.Forms.Label lblMjerenjaResult;
     }
 }

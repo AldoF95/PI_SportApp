@@ -27,12 +27,21 @@ namespace BB_app.View
             panelUnosIgr.Location = new Point(x, y); //stvaranje nove tocke za lokaciju panela
 
             var ek = new List<Ekipa>();
-            DB_connection.OpenConn();
-            ek = DB_GET.Ekipa_Get_All(); //dohvacanje listu ekipa
-            DB_connection.CloseConn();
-            cmbUnosIgr01.Items.Clear(); //praznjenje comboboxa (drop down menu) ako ima vec unutra nesto
-            cmbUnosIgr01.DisplayMember = "Naziv"; //prikaz samo imena
-            foreach(var i in ek) { cmbUnosIgr01.Items.Add(i); } //punjenje combo box sa svakim dohvacenim elemntom
+
+            try
+            {
+                DB_connection.OpenConn();
+                ek = DB_GET.Ekipa_Get_All(); //dohvacanje listu ekipa
+                DB_connection.CloseConn();
+                cmbUnosIgr01.Items.Clear(); //praznjenje comboboxa (drop down menu) ako ima vec unutra nesto
+                cmbUnosIgr01.DisplayMember = "Naziv"; //prikaz samo imena
+                foreach (var i in ek) { cmbUnosIgr01.Items.Add(i); } //punjenje combo box sa svakim dohvacenim elemntom
+            }
+            catch(ArgumentException err)
+            {
+                Change_label("Greška kod punjenja liste: "+err.ToString());
+            }
+            
 
             //sve se nalazi na jednoj formi
             //pa za prikaz jednog treba sakriti druge kontrole
@@ -64,9 +73,19 @@ namespace BB_app.View
             if (chbUnosIgr01.Checked){ Igr.Karton = true; } //provjera ako je check box oznacen
             else{ Igr.Karton = false; }
             Igr.Ekipa_id = Ek.Id;
-            DB_connection.OpenConn();
-            DB_PUT.Igraci_Put(Igr); //spremanje objekta igraca sa podacima
-            DB_connection.CloseConn();
+
+            try
+            {
+                DB_connection.OpenConn();
+                DB_PUT.Igraci_Put(Igr); //spremanje objekta igraca sa podacima
+                DB_connection.CloseConn();
+                Change_label("Igrač " + Igr.Ime.ToString() + " unešen");
+            }
+            catch(ArgumentException err)
+            {
+                Change_label(err.ToString());
+            }
+            
         }
 
         private void chbUnosVj05_CheckedChanged(object sender, EventArgs e)
@@ -107,10 +126,18 @@ namespace BB_app.View
             if (chbUnosVj02.Checked) { vj.Brzina = true; }
             if (chbUnosVj03.Checked) { vj.Brojac = true; }
             if (chbUnosVj04.Checked) { vj.Udaljenost = true; }
-
-            DB_connection.OpenConn();
-            DB_PUT.Vjezbe_Put(vj);
-            DB_connection.CloseConn();
+            try
+            {
+                DB_connection.OpenConn();
+                DB_PUT.Vjezbe_Put(vj);
+                DB_connection.CloseConn();
+                Change_label("Vježba " + vj.Naziv.ToString() + " unesena");
+            }
+            catch(ArgumentException err)
+            {
+                Change_label("Greška kod unosa vježbe: "+err.ToString());
+            }
+            
         }
 
         private void btnUnosEkipa_Click(object sender, EventArgs e)
@@ -178,14 +205,37 @@ namespace BB_app.View
             ek.Naziv = txtbUnosEkipe.Text;
             ek.Trener = txtbUnosEkipe02.Text;
 
-            DB_connection.OpenConn();
-            DB_PUT.Ekipa_Put(ek);
-            DB_connection.CloseConn();
+            try
+            {
+                DB_connection.OpenConn();
+                DB_PUT.Ekipa_Put(ek);
+                DB_connection.CloseConn();
+                Change_label("Ekipa "+ek.Naziv.ToString()+" unešena");
+            }
+            catch(ArgumentException err)
+            {
+                Change_label("Greška kod unosa ekipe: "+err.ToString());
+            }
+            
         }
 
         private void btnUnosBrisi_Click(object sender, EventArgs e)
         {
             new Brisanje_popup().Show();
+        }
+
+        private void Change_label(string str)
+        {
+            lblUnosResult.Text = str.ToString();
+            lblUnosResult.Visible = true;
+            var t = new Timer();
+            t.Interval = 3000;
+            t.Start();
+            t.Tick += (s, e) =>
+            {
+                lblUnosResult.Visible = false;
+                t.Stop();
+            };
         }
     }
 }

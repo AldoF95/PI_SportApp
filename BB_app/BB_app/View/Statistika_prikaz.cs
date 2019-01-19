@@ -29,7 +29,6 @@ namespace BB_app.View
         char type_send_to_form;
         string name_send_to_form;
         Ekipa ekipa_id;
-        List<Igraci> igr;
         public List<Statistika> stat = new List<Statistika>();
         public Statistika_prikaz()
         {
@@ -87,21 +86,29 @@ namespace BB_app.View
 
         private void Prikaz_statistika()
         {
-            DB_connection.OpenConn();
-            switch (trenutni)
+            try
             {
-                case 0:
-                    {
-                        stat = DB_GET.Statistika_Get_By_Id(igrac_id.Id, 'I');
-                        break;
-                    }
-                case 1:
-                    {
-                        stat = DB_GET.Statistika_Get_By_Id(ekipa_id.Id, 'E');
-                        break;
-                    }
+                DB_connection.OpenConn();
+                switch (trenutni)
+                {
+                    case 0:
+                        {
+                            stat = DB_GET.Statistika_Get_By_Id(igrac_id.Id, 'I');
+                            break;
+                        }
+                    case 1:
+                        {
+                            stat = DB_GET.Statistika_Get_By_Id(ekipa_id.Id, 'E');
+                            break;
+                        }
+                }
+                DB_connection.CloseConn();
             }
-            DB_connection.CloseConn();
+            catch(ArgumentException err)
+            {
+                Change_label("Greška kod čitanja podataka: " + err.ToString());
+            }
+            
             
             List<decimal> podaci_Visina = new List<decimal>();
             List<decimal> podaci_Tezina = new List<decimal>();
@@ -210,6 +217,20 @@ namespace BB_app.View
         private void btnStatistikaKosevi_Click(object sender, EventArgs e)
         {
             new Prikaz_suteva(id_send_to_form, type_send_to_form, name_send_to_form, stat).Show();
+        }
+
+        private void Change_label(string str)
+        {
+            lblStatistikaResult.Text = str.ToString();
+            lblStatistikaResult.Visible = true;
+            var t = new Timer();
+            t.Interval = 3000;
+            t.Start();
+            t.Tick += (s, e) =>
+            {
+                lblStatistikaResult.Visible = false;
+                t.Stop();
+            };
         }
     }
 }

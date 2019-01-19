@@ -38,75 +38,83 @@ namespace BB_app.View
         {
             int selected_idex = cmbBrisanjeOdabir.SelectedIndex;
             selected_item = cmbBrisanjeOdabir.SelectedItem.ToString();
-            DB_connection.OpenConn();
-            switch (selected_idex)
+            try
             {
-                case 0:
-                    {
-                        ekipe = DB_GET.Ekipa_Get_All();
-                        var collection = new ObservableCollection<Ekipa>(ekipe);
-                        datasource = new BindingSource(collection, null);
-                        selected_item = "EKIPA";
-                        break;
-                    }
-                case 1:
-                    {
-                        igrac = DB_GET.Igraci_Get_All();
-                        var collection = new ObservableCollection<Igraci>(igrac);
-                        datasource = new BindingSource(collection, null);
-                        selected_item = "IGRAC";
-                        break;
-                    }
-                case 2:
-                    {
-                        prisutan = DB_GET.Prisutnost_Get_All();
-                        var collection = new ObservableCollection<Prisutnost>(prisutan);
-                        datasource = new BindingSource(collection, null);
-                        selected_item = "PRISUTNOST";
-                        break;
-                    }
-                case 3:
-                    {
-                        trening = DB_GET.Trening_Get_All();
-                        var collection = new ObservableCollection<Trening>(trening);
-                        datasource = new BindingSource(collection, null);
-                        selected_item = "TRENING";
-                        break;
-                    }
-                case 4:
-                    {
-                        statistike = DB_GET.Statistika_Get_All();
-                        var collection = new ObservableCollection<Statistika>(statistike);
-                        datasource = new BindingSource(collection, null);
-                        selected_item = "STATISTIKA";
-                        break;
-                    }
-                case 5:
-                    {
-                        zapisnik = DB_GET.Zapisnik_Get_All();
-                        var collection = new ObservableCollection<Zapisnik>(zapisnik);
-                        datasource = new BindingSource(collection, null);
-                        selected_item = "ZAPISNIK";
-                        break;
-                    }
-                case 6:
-                    {
-                        vjezba = DB_GET.Vjezbe_Get_All();
-                        var collection = new ObservableCollection<Vjezbe>(vjezba);
-                        datasource = new BindingSource(collection, null);
-                        selected_item = "VJEZBE";
-                        break;
-                    }
-                case 7:
-                    {
-                        kosevi = DB_GET.Kosevi_Get_All();
-                        var collection = new ObservableCollection<Kosevi>(kosevi);
-                        datasource = new BindingSource(collection, null);
-                        selected_item = "KOSEVI";
-                        break;
-                    }
+                DB_connection.OpenConn();
+                switch (selected_idex)
+                {
+                    case 0:
+                        {
+                            ekipe = DB_GET.Ekipa_Get_All();
+                            var collection = new ObservableCollection<Ekipa>(ekipe);
+                            datasource = new BindingSource(collection, null);
+                            selected_item = "EKIPA";
+                            break;
+                        }
+                    case 1:
+                        {
+                            igrac = DB_GET.Igraci_Get_All();
+                            var collection = new ObservableCollection<Igraci>(igrac);
+                            datasource = new BindingSource(collection, null);
+                            selected_item = "IGRAC";
+                            break;
+                        }
+                    case 2:
+                        {
+                            prisutan = DB_GET.Prisutnost_Get_All();
+                            var collection = new ObservableCollection<Prisutnost>(prisutan);
+                            datasource = new BindingSource(collection, null);
+                            selected_item = "PRISUTNOST";
+                            break;
+                        }
+                    case 3:
+                        {
+                            trening = DB_GET.Trening_Get_All();
+                            var collection = new ObservableCollection<Trening>(trening);
+                            datasource = new BindingSource(collection, null);
+                            selected_item = "TRENING";
+                            break;
+                        }
+                    case 4:
+                        {
+                            statistike = DB_GET.Statistika_Get_All();
+                            var collection = new ObservableCollection<Statistika>(statistike);
+                            datasource = new BindingSource(collection, null);
+                            selected_item = "STATISTIKA";
+                            break;
+                        }
+                    case 5:
+                        {
+                            zapisnik = DB_GET.Zapisnik_Get_All();
+                            var collection = new ObservableCollection<Zapisnik>(zapisnik);
+                            datasource = new BindingSource(collection, null);
+                            selected_item = "ZAPISNIK";
+                            break;
+                        }
+                    case 6:
+                        {
+                            vjezba = DB_GET.Vjezbe_Get_All();
+                            var collection = new ObservableCollection<Vjezbe>(vjezba);
+                            datasource = new BindingSource(collection, null);
+                            selected_item = "VJEZBE";
+                            break;
+                        }
+                    case 7:
+                        {
+                            kosevi = DB_GET.Kosevi_Get_All();
+                            var collection = new ObservableCollection<Kosevi>(kosevi);
+                            datasource = new BindingSource(collection, null);
+                            selected_item = "KOSEVI";
+                            break;
+                        }
+                }
+                DB_connection.CloseConn();
             }
-            DB_connection.CloseConn();
+            catch(ArgumentException err)
+            {
+                Change_label("Greška kod brisanja: " + err.ToString());
+            }
+            
 
             dgvBrisanje.DataSource = datasource;
             dgvBrisanje.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;

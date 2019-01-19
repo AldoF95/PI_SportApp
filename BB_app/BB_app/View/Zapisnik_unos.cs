@@ -43,10 +43,18 @@ namespace BB_app.View
             zap.Ekipa_gost = txtbZapisnik01.Text;
             zap.Rez_dom = Int32.Parse(txtbZapisnik02.Text);
             zap.Rez_gost = Int32.Parse(txtbZapisnik03.Text);
-
-            DB_connection.OpenConn();
-            DB_PUT.Zapisnik_Put(zap); //spremanje zapisnika
-            DB_connection.CloseConn();
+            try
+            {
+                DB_connection.OpenConn();
+                DB_PUT.Zapisnik_Put(zap); //spremanje zapisnika
+                DB_connection.CloseConn();
+                this.Close();
+            }
+            catch(ArgumentException err)
+            {
+                Change_label(err.ToString());
+            }
+            
         }
 
         private void btnZapisnik03_Click(object sender, EventArgs e)
@@ -59,6 +67,20 @@ namespace BB_app.View
             //odabrana ekipa iz combo boxa
             ek = new Ekipa();
             ek = (Ekipa)cmbZapisnik01.SelectedItem;
+        }
+
+        private void Change_label(string str)
+        {
+            lblZapisnikResult.Text = str.ToString();
+            lblZapisnikResult.Visible = true;
+            var t = new Timer();
+            t.Interval = 3000;
+            t.Start();
+            t.Tick += (s, e) =>
+            {
+                lblZapisnikResult.Visible = false;
+                t.Stop();
+            };
         }
     }
 }
