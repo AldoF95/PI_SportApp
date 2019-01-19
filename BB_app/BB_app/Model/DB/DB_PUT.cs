@@ -61,7 +61,7 @@ namespace BB_app.Model.DB
             SQLiteCommand com = DB_connection.conn.CreateCommand();
             com.CommandText = String.Format(@"INSERT INTO ZAPISNIK (Datum, Ekipa_ID, Ekipa_G, Rez_d, Rez_g)
                                                VALUES ('{0}', '{1}', '{2}', '{3}', '{4}')",
-                                              za.Datum, za.Ekipa_id, za.Ekipa_gost, za.Rez_dom, za.Rez_gost);
+                                              za.Datum.ToFileTime(), za.Ekipa_id, za.Ekipa_gost, za.Rez_dom, za.Rez_gost);
             com.ExecuteNonQuery();
             com.Dispose();
         }
@@ -79,7 +79,7 @@ namespace BB_app.Model.DB
             SQLiteCommand com = DB_connection.conn.CreateCommand();
             com.CommandText = String.Format(@"INSERT INTO TRENING (Datum, Naziv, Br_vjezbi)
                                                VALUES ('{0}', '{1}', '{2}')",
-                                              tr.Datum, tr.Naziv, tr.Br_Vjezbi);
+                                              tr.Datum.ToFileTime(), tr.Naziv, tr.Br_Vjezbi);
             com.ExecuteNonQuery();
             com.Dispose();
         }

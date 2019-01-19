@@ -27,6 +27,7 @@ namespace BB_app.View
 
         public BindingSource datasource;
         public int id_to_delete;
+        public string selected_item;
 
         public Brisanje_popup()
         {
@@ -36,7 +37,7 @@ namespace BB_app.View
         private void cmbBrisanjeOdabir_SelectedIndexChanged(object sender, EventArgs e)
         {
             int selected_idex = cmbBrisanjeOdabir.SelectedIndex;
-            
+            selected_item = cmbBrisanjeOdabir.SelectedItem.ToString();
             DB_connection.OpenConn();
             switch (selected_idex)
             {
@@ -45,6 +46,7 @@ namespace BB_app.View
                         ekipe = DB_GET.Ekipa_Get_All();
                         var collection = new ObservableCollection<Ekipa>(ekipe);
                         datasource = new BindingSource(collection, null);
+                        selected_item = "EKIPA";
                         break;
                     }
                 case 1:
@@ -52,6 +54,7 @@ namespace BB_app.View
                         igrac = DB_GET.Igraci_Get_All();
                         var collection = new ObservableCollection<Igraci>(igrac);
                         datasource = new BindingSource(collection, null);
+                        selected_item = "IGRAC";
                         break;
                     }
                 case 2:
@@ -59,6 +62,7 @@ namespace BB_app.View
                         prisutan = DB_GET.Prisutnost_Get_All();
                         var collection = new ObservableCollection<Prisutnost>(prisutan);
                         datasource = new BindingSource(collection, null);
+                        selected_item = "PRISUTNOST";
                         break;
                     }
                 case 3:
@@ -66,6 +70,7 @@ namespace BB_app.View
                         trening = DB_GET.Trening_Get_All();
                         var collection = new ObservableCollection<Trening>(trening);
                         datasource = new BindingSource(collection, null);
+                        selected_item = "TRENING";
                         break;
                     }
                 case 4:
@@ -73,6 +78,7 @@ namespace BB_app.View
                         statistike = DB_GET.Statistika_Get_All();
                         var collection = new ObservableCollection<Statistika>(statistike);
                         datasource = new BindingSource(collection, null);
+                        selected_item = "STATISTIKA";
                         break;
                     }
                 case 5:
@@ -80,6 +86,7 @@ namespace BB_app.View
                         zapisnik = DB_GET.Zapisnik_Get_All();
                         var collection = new ObservableCollection<Zapisnik>(zapisnik);
                         datasource = new BindingSource(collection, null);
+                        selected_item = "ZAPISNIK";
                         break;
                     }
                 case 6:
@@ -87,6 +94,7 @@ namespace BB_app.View
                         vjezba = DB_GET.Vjezbe_Get_All();
                         var collection = new ObservableCollection<Vjezbe>(vjezba);
                         datasource = new BindingSource(collection, null);
+                        selected_item = "VJEZBE";
                         break;
                     }
                 case 7:
@@ -94,6 +102,7 @@ namespace BB_app.View
                         kosevi = DB_GET.Kosevi_Get_All();
                         var collection = new ObservableCollection<Kosevi>(kosevi);
                         datasource = new BindingSource(collection, null);
+                        selected_item = "KOSEVI";
                         break;
                     }
             }
@@ -111,12 +120,39 @@ namespace BB_app.View
 
         private void btnBrisanjeBrisi_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                DB_connection.OpenConn();
+                DB_DELETE.Delete_row(id_to_delete, selected_item);
+                DB_connection.CloseConn();
+                dgvBrisanje.Rows.RemoveAt(dgvBrisanje.SelectedRows[0].Index);
+                string lbl = "Izbrisan redak iz tablice" + selected_item.ToString() + " sa Id = " + id_to_delete.ToString();
+                Change_label(lbl);
+            }
+            catch (ArgumentException err)
+            {
+                Change_label(err.ToString());
+            }
+            
         }
 
         private void dgvBrisanje_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-    
+            id_to_delete = Convert.ToInt32(dgvBrisanje.SelectedRows[0].Cells["ID"].Value.ToString());
+        }
+
+        private void Change_label(string str)
+        {
+            lblBrisanjeResult.Text = str.ToString();
+            lblBrisanjeResult.Visible = true;
+            var t = new Timer();
+            t.Interval = 3000;
+            t.Start();
+            t.Tick += (s, e) =>
+            {
+                lblBrisanjeResult.Visible = false;
+                t.Stop();
+            };
         }
     }
 }

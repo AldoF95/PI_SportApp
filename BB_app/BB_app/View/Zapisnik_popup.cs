@@ -30,13 +30,13 @@ namespace BB_app.View
         private void btnZapisnikPop02_Click(object sender, EventArgs e)
         {
             //pozivanje forme za unos suteva
-            new KoseviSut('E', eki.Id).Show();
+            new KoseviSut('E', eki).Show();
             this.Close();
         }
 
         private void btnZapisnikPop03_Click(object sender, EventArgs e)
         {
-            new KoseviSut('Z', eki.Id).Show();
+            new KoseviSut('I', eki).Show();
             this.Close();
         }
     }

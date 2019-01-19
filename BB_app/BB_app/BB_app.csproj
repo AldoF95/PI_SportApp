@@ -73,6 +73,7 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\DB\DB_DELETE.cs" />
     <Compile Include="Model\DB\DB_GET.cs" />
     <Compile Include="Model\DB\DB_connection.cs" />
     <Compile Include="Model\DB\DB_PUT.cs" />

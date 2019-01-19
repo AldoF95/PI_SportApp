@@ -84,7 +84,7 @@
             this.btnUnosIgrac.Name = "btnUnosIgrac";
             this.btnUnosIgrac.Size = new System.Drawing.Size(250, 180);
             this.btnUnosIgrac.TabIndex = 0;
-            this.btnUnosIgrac.Text = "Novi Igrac";
+            this.btnUnosIgrac.Text = "Novi Igrač";
             this.btnUnosIgrac.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.btnUnosIgrac.UseSelectable = true;
             this.btnUnosIgrac.Click += new System.EventHandler(this.btnUnosIgrac_Click);
@@ -269,9 +269,9 @@
             this.chbUnosIgr01.FontWeight = MetroFramework.MetroCheckBoxWeight.Bold;
             this.chbUnosIgr01.Location = new System.Drawing.Point(125, 293);
             this.chbUnosIgr01.Name = "chbUnosIgr01";
-            this.chbUnosIgr01.Size = new System.Drawing.Size(158, 20);
+            this.chbUnosIgr01.Size = new System.Drawing.Size(157, 20);
             this.chbUnosIgr01.TabIndex = 12;
-            this.chbUnosIgr01.Text = "Zdranstveni karton";
+            this.chbUnosIgr01.Text = "Zdravstveni karton";
             this.chbUnosIgr01.UseSelectable = true;
             // 
             // btnUnosIgrPut
@@ -781,8 +781,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 550);
-            this.Controls.Add(this.btnUnosBrisi);
             this.Controls.Add(this.panelUnosIgr);
+            this.Controls.Add(this.btnUnosBrisi);
             this.Controls.Add(this.btnUnosVjezba);
             this.Controls.Add(this.btnUnosEkipa);
             this.Controls.Add(this.btnUnosIgrac);

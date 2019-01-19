@@ -64,7 +64,7 @@ namespace BB_app.Model.DB
             {
                 Trening t = new Trening();
                 t.Id = Convert.ToInt32(reader["ID"]);
-                t.Datum = DateTime.Parse(reader["Datum"].ToString());
+                t.Datum = DateTime.FromFileTime(reader.GetInt64(1));
                 if (reader["Naziv"].GetType() != typeof(DBNull)) { t.Naziv = (string)reader["Naziv"]; }
                 if (reader["Br_vjezbi"].GetType() != typeof(DBNull)) { t.Br_Vjezbi = Convert.ToInt32(reader["Br_vjezbi"]); }
 
@@ -85,6 +85,7 @@ namespace BB_app.Model.DB
             {
                 Trening t = new Trening();
                 t.Id = Convert.ToInt32(reader["ID"]);
+                t.Datum = DateTime.FromFileTime(reader.GetInt64(1));
                 if (reader["Naziv"].GetType() != typeof(DBNull)) { t.Naziv = (string)reader["Naziv"]; }
                 if (reader["Br_vjezbi"].GetType() != typeof(DBNull)) { t.Br_Vjezbi = Convert.ToInt32(reader["Br_vjezbi"]); }
 
@@ -284,7 +285,7 @@ namespace BB_app.Model.DB
                 Zapisnik z = new Zapisnik();
 
                 z.Id = Convert.ToInt32(reader["ID"]);
-                if(reader["Datum"].GetType() != typeof(DBNull)) { z.Datum = (DateTime)reader["Datum"]; }
+                if(DateTime.FromFileTime(reader.GetInt64(1)).GetType() != typeof(DBNull)) { z.Datum = DateTime.FromFileTime(reader.GetInt64(1)); }
                 if (reader["Ekipa_ID"].GetType() != typeof(DBNull)) { z.Ekipa_id = Convert.ToInt32(reader["Ekipa_ID"]); }
                 z.Ekipa_gost = (string)reader["Ekipa_G"];
                 z.Rez_dom = Convert.ToInt32(reader["Rez_d"]);
@@ -308,7 +309,7 @@ namespace BB_app.Model.DB
                 Zapisnik z = new Zapisnik();
 
                 z.Id = Convert.ToInt32(reader["ID"]);
-                if (reader["Datum"].GetType() != typeof(DBNull)) { z.Datum = (DateTime)reader["Datum"]; }
+                if (DateTime.FromFileTime(reader.GetInt64(1)).GetType() != typeof(DBNull)) { z.Datum = DateTime.FromFileTime(reader.GetInt64(1)); }
                 if (reader["Ekipa_ID"].GetType() != typeof(DBNull)) { z.Ekipa_id = Convert.ToInt32(reader["Ekipa_ID"]); }
                 z.Ekipa_gost = (string)reader["Ekipa_G"];
                 z.Rez_dom = Convert.ToInt32(reader["Rez_d"]);

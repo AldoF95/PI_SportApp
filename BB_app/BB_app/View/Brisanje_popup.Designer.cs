@@ -32,6 +32,7 @@
             this.dgvBrisanje = new System.Windows.Forms.DataGridView();
             this.btnBrisanjeIzadi = new MetroFramework.Controls.MetroButton();
             this.btnBrisanjeBrisi = new MetroFramework.Controls.MetroButton();
+            this.lblBrisanjeResult = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBrisanje)).BeginInit();
             this.SuspendLayout();
             // 
@@ -89,6 +90,19 @@
             this.btnBrisanjeBrisi.UseSelectable = true;
             this.btnBrisanjeBrisi.Click += new System.EventHandler(this.btnBrisanjeBrisi_Click);
             // 
+            // lblBrisanjeResult
+            // 
+            this.lblBrisanjeResult.AutoSize = true;
+            this.lblBrisanjeResult.BackColor = System.Drawing.Color.Transparent;
+            this.lblBrisanjeResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBrisanjeResult.ForeColor = System.Drawing.Color.LightGreen;
+            this.lblBrisanjeResult.Location = new System.Drawing.Point(988, 27);
+            this.lblBrisanjeResult.Name = "lblBrisanjeResult";
+            this.lblBrisanjeResult.Size = new System.Drawing.Size(64, 25);
+            this.lblBrisanjeResult.TabIndex = 4;
+            this.lblBrisanjeResult.Text = "label1";
+            this.lblBrisanjeResult.Visible = false;
+            // 
             // Brisanje_popup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -96,6 +110,7 @@
             this.BackgroundImage = global::BB_app.Properties.Resources._1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1530, 685);
+            this.Controls.Add(this.lblBrisanjeResult);
             this.Controls.Add(this.btnBrisanjeBrisi);
             this.Controls.Add(this.btnBrisanjeIzadi);
             this.Controls.Add(this.dgvBrisanje);
@@ -105,6 +120,7 @@
             this.Text = "Brisanje_popup";
             ((System.ComponentModel.ISupportInitialize)(this.dgvBrisanje)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -114,5 +130,6 @@
         private System.Windows.Forms.DataGridView dgvBrisanje;
         private MetroFramework.Controls.MetroButton btnBrisanjeIzadi;
         private MetroFramework.Controls.MetroButton btnBrisanjeBrisi;
+        private System.Windows.Forms.Label lblBrisanjeResult;
     }
 }

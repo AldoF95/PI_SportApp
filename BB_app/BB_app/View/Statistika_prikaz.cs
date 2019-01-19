@@ -35,21 +35,6 @@ namespace BB_app.View
         {
             InitializeComponent();
 
-            /*pieChart1.Series = new SeriesCollection
-            {
-                new PieSeries
-                {
-                    Values = new ChartValues<int> {1}
-                },
-                new PieSeries
-                {
-                    Values = new ChartValues<int> {6}
-                },
-                new PieSeries
-                {
-                    Values = new ChartValues<int> {3}
-                }
-            };*/
         }
 
         private void cmbStatistikaOdabir_SelectedIndexChanged(object sender, EventArgs e)
@@ -61,7 +46,7 @@ namespace BB_app.View
             int Y = Convert.ToInt32(cmbStatistikaOdabir.Location.Y)+50;
             if (cmbStatistikaOdabir.SelectedItem.ToString().Equals("Igrači"))
             {
-                gv = new GridView_punjenje('I', X, Y);
+                gv = new GridView_punjenje('I', X, Y, 0);
                 gv.gv.Name = "gridview";
                 GV_Click_Igrac();
                 trenutni = 0;
@@ -69,7 +54,7 @@ namespace BB_app.View
             }
             else if (cmbStatistikaOdabir.SelectedItem.ToString().Equals("Ekipe"))
             {
-                gv = new GridView_punjenje('E', X, Y);
+                gv = new GridView_punjenje('S', X, Y, 0);
                 gv.gv.Name = "gridview";
                 GV_Click_Ekipe();
                 trenutni = 1;

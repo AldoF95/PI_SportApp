@@ -20,11 +20,13 @@ namespace BB_app.Presenter
         public Ekipa ekipa_id;
         public Igraci igrac_id;
         public char source_type;
-        public DataGridView gv; 
+        public DataGridView gv;
+        public int get_by_id = 0;
 
         //konstruktor prima izvor podataka, i id ekipe za prikaz ekipe
-        public GridView_punjenje(char source, int X, int Y)
+        public GridView_punjenje(char source, int X, int Y, int id)
         {
+            get_by_id = id;
             gv = new DataGridView(); //novi grid view
             gv.AutoGenerateColumns = false; //da se moze rucno postaviti stupci
             gv.Location = new System.Drawing.Point(X, Y);//pozicija pojave gv
@@ -37,6 +39,11 @@ namespace BB_app.Presenter
                         break;
                     }
                 case 'E':
+                    {
+                        gvIgraci();
+                        break;
+                    }
+                case 'S':
                     {
                         gvEkipe();
                         break;
@@ -53,7 +60,15 @@ namespace BB_app.Presenter
 
             igr = new List<Igraci>();
             DB_connection.OpenConn();
-            igr = DB_GET.Igraci_Get_All(); //dohvacanje igraca
+            if(get_by_id != 0)
+            {
+                igr = DB_GET.Ekipa_Get_By_Id(get_by_id);
+            }
+            else
+            {
+                igr = DB_GET.Igraci_Get_All(); //dohvacanje igraca
+            }
+            
             DB_connection.CloseConn();
 
             var collection = new ObservableCollection<Igraci>(igr); //stvaranje kolekcije...preko presentera

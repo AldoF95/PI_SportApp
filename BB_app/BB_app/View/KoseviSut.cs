@@ -20,13 +20,27 @@ namespace BB_app.View
     {
         public GridView_punjenje gridView;
         public char s;
-        public KoseviSut(char source, int ek_id = 0)
+        public Ekipa ekipa = new Ekipa();
+        public KoseviSut(char source, Ekipa ek)
         {
+            ekipa = ek;
             InitializeComponent();
             s = source;
-            //grid view se generira ovisno o izvoru (ekipa ili igraci)
-            gridView = new GridView_punjenje(source, 12, 12);
-            this.Controls.Add(gridView.gv); //dodavanje novog grid view (kontrole) na formu
+            if(source == 'E')
+            {
+                lblKoseviSutIzvor.Text = ek.Naziv.ToString();
+                lblKoseviSutIzvor.Visible = true;
+            }
+            else if(source == 'I')
+            {
+                //grid view se generira
+                gridView = new GridView_punjenje(source, 12, 100, ek.Id);
+                this.Controls.Add(gridView.gv); //dodavanje novog grid view (kontrole) na formu
+                lblKoseviSutIzvor.Text = ek.Naziv.ToString();
+                lblKoseviSutIzvor.Visible = true;
+            }
+            
+            
 
         }
 
@@ -36,7 +50,14 @@ namespace BB_app.View
             Kosevi kos = new Kosevi();
             //metoda od klase Kosevi
             kos.Set_XY((decimal)e.Location.X, (decimal)e.Location.Y, (decimal)picbKoseviTeren.Height, (decimal)picbKoseviTeren.Width);
-            kos.Suter_id = gridView.igrac_id.Id;
+            if(s == 'E')
+            {
+                kos.Suter_id = ekipa.Id;
+            }
+            else if (s == 'I')
+            {
+                kos.Suter_id = gridView.igrac_id.Id;
+            }
             kos.Vrsta_sut = s;
             //koordinate za izracunavanje pozicjie klika
             var X = picbKoseviTeren.Location.X + e.Location.X;
