@@ -20,11 +20,15 @@ namespace BB_app.Model
         public void Izracun_postotka_suteva(List<Kosevi> sutevi)
         {
             decimal pogodeno = 0;
-            foreach(var i in sutevi)
+            if(sutevi.Count != 0)
             {
-                if(i.Pogodak == true) { pogodeno++; }
+                foreach (var i in sutevi)
+                {
+                    if (i.Pogodak == true) { pogodeno++; }
+                }
+                this.Postotak_suteva = pogodeno / sutevi.Count();
             }
-            this.Postotak_suteva = pogodeno / sutevi.Count();
+            
         }
         public void Izracun_postotka_prisutnosti()
         {
