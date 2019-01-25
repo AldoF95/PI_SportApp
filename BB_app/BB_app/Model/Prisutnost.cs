@@ -13,6 +13,7 @@ namespace BB_app.Model
         public int Trening_id { get; set; }
         public bool Prisutan { get; set; }
         public List<Igraci> Igraci_prisut = new List<Igraci>();
+        public Trening Trening = new Trening();
         public string Trening_prisut { get; set; }
 
         public Prisutnost()

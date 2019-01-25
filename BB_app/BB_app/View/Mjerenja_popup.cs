@@ -48,6 +48,7 @@ namespace BB_app.View
             }
             catch (ArgumentException err)
             {
+                lblMjerenjaResult.ForeColor = Color.Red;
                 Change_label("Greška kod spremanja podataka: " + err.ToString());
             }
             
@@ -68,6 +69,7 @@ namespace BB_app.View
             t.Tick += (s, e) =>
             {
                 lblMjerenjaResult.Visible = false;
+                lblMjerenjaResult.ForeColor = Color.LimeGreen;
                 t.Stop();
             };
         }

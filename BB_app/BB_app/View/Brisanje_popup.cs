@@ -112,6 +112,7 @@ namespace BB_app.View
             }
             catch(ArgumentException err)
             {
+                lblBrisanjeResult.ForeColor = Color.Red;
                 Change_label("Greška kod brisanja: " + err.ToString());
             }
             
@@ -139,6 +140,7 @@ namespace BB_app.View
             }
             catch (ArgumentException err)
             {
+                lblBrisanjeResult.ForeColor = Color.Red;
                 Change_label(err.ToString());
             }
             
@@ -159,6 +161,7 @@ namespace BB_app.View
             t.Tick += (s, e) =>
             {
                 lblBrisanjeResult.Visible = false;
+                lblBrisanjeResult.ForeColor = Color.LimeGreen;
                 t.Stop();
             };
         }

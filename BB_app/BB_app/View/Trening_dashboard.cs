@@ -177,8 +177,9 @@ namespace BB_app.View
                         break;
                     }
             }
-            Change_label("Podataka spremljen");
+            Change_label("Podatak spremljen");
             panelDashboardUnos.Visible = false;
+            txtbPanelValue.Text = "";
         }
 
         private void btnPanelIzadi_Click(object sender, EventArgs e)
@@ -225,6 +226,7 @@ namespace BB_app.View
             }
             catch (ArgumentException e)
             {
+                lblDashboardResult.ForeColor = Color.Red;
                 Change_label(Convert.ToString(e));
             }
             
@@ -259,6 +261,7 @@ namespace BB_app.View
             }
             catch(ArgumentException err)
             {
+                lblDashboardResult.ForeColor = Color.Red;
                 Change_label(Convert.ToString(err));
             }
 
@@ -285,6 +288,7 @@ namespace BB_app.View
             t.Tick += (s, e) =>
             {
                 lblDashboardResult.Visible = false;
+                lblDashboardResult.ForeColor = Color.LimeGreen;
                 t.Stop();
             };
         }

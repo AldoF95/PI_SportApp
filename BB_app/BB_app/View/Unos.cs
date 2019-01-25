@@ -39,6 +39,7 @@ namespace BB_app.View
             }
             catch(ArgumentException err)
             {
+                lblUnosResult.ForeColor = Color.Red;
                 Change_label("Greška kod punjenja liste: "+err.ToString());
             }
             
@@ -80,10 +81,12 @@ namespace BB_app.View
                 DB_PUT.Igraci_Put(Igr); //spremanje objekta igraca sa podacima
                 DB_connection.CloseConn();
                 Change_label("Igrač " + Igr.Ime.ToString() + " unešen");
+                btnUnosIgraca02_Click(sender, e);
             }
             catch(ArgumentException err)
             {
-                Change_label(err.ToString());
+                lblUnosResult.ForeColor = Color.Red;
+                Change_label("Greška kod unosa igrača: "+err.ToString());
             }
             
         }
@@ -132,9 +135,11 @@ namespace BB_app.View
                 DB_PUT.Vjezbe_Put(vj);
                 DB_connection.CloseConn();
                 Change_label("Vježba " + vj.Naziv.ToString() + " unesena");
+                btnUnosVjezbi02_Click(sender, e);
             }
             catch(ArgumentException err)
             {
+                lblUnosResult.ForeColor = Color.Red;
                 Change_label("Greška kod unosa vježbe: "+err.ToString());
             }
             
@@ -211,9 +216,11 @@ namespace BB_app.View
                 DB_PUT.Ekipa_Put(ek);
                 DB_connection.CloseConn();
                 Change_label("Ekipa "+ek.Naziv.ToString()+" unešena");
+                btnUnosEkipe02_Click(sender, e);
             }
             catch(ArgumentException err)
             {
+                lblUnosResult.ForeColor = Color.Red;
                 Change_label("Greška kod unosa ekipe: "+err.ToString());
             }
             
@@ -234,6 +241,7 @@ namespace BB_app.View
             t.Tick += (s, e) =>
             {
                 lblUnosResult.Visible = false;
+                lblUnosResult.ForeColor = Color.LimeGreen;
                 t.Stop();
             };
         }

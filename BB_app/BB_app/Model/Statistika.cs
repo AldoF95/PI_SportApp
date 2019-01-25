@@ -14,6 +14,7 @@ namespace BB_app.Model
         public decimal Postotak_suteva { get; set; }
         public decimal Postotak_prisutnost { get; set; }
         public List<Prisutnost> pri;
+        public List<Kosevi> sut = new List<Kosevi>();
 
         public Statistika() { }
 

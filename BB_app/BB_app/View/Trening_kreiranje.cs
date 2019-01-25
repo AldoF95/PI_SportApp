@@ -36,6 +36,7 @@ namespace BB_app.View
             }
             catch(ArgumentException err)
             {
+                lblTreningKreirajResult.ForeColor = Color.Red;
                 Change_label("Greška kod učitavanja podataka: " + err.ToString());
             }
             
@@ -75,6 +76,7 @@ namespace BB_app.View
             }
             catch(ArgumentException err)
             {
+                lblTreningKreirajResult.ForeColor = Color.Red;
                 Change_label("Greška kod učitavanja podataka" + err.ToString());
             }
             
@@ -140,6 +142,7 @@ namespace BB_app.View
             }
             catch(ArgumentException err)
             {
+                lblTreningKreirajResult.ForeColor = Color.Red;
                 Change_label("Greška kod spremanja treninga" + err.ToString());
             }
            
@@ -166,6 +169,7 @@ namespace BB_app.View
             }
             catch(ArgumentException err)
             {
+                lblTreningKreirajResult.ForeColor = Color.Red;
                 Change_label("Greška kod spremanja prisutnosti: " + err.ToString());
             }
 
@@ -180,6 +184,7 @@ namespace BB_app.View
             t.Tick += (s, e) =>
             {
                 lblTreningKreirajResult.Visible = false;
+                lblTreningKreirajResult.ForeColor = Color.LimeGreen;
                 t.Stop();
             };
         }

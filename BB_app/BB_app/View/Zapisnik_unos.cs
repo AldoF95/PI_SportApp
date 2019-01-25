@@ -52,6 +52,7 @@ namespace BB_app.View
             }
             catch(ArgumentException err)
             {
+                lblZapisnikResult.ForeColor = Color.Red;
                 Change_label(err.ToString());
             }
             
@@ -79,6 +80,7 @@ namespace BB_app.View
             t.Tick += (s, e) =>
             {
                 lblZapisnikResult.Visible = false;
+                lblZapisnikResult.ForeColor = Color.LimeGreen;
                 t.Stop();
             };
         }

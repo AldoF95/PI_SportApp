@@ -164,7 +164,7 @@
             this.txtbUnosIgr01.CustomButton.Visible = false;
             this.txtbUnosIgr01.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtbUnosIgr01.Lines = new string[0];
-            this.txtbUnosIgr01.Location = new System.Drawing.Point(125, 65);
+            this.txtbUnosIgr01.Location = new System.Drawing.Point(173, 65);
             this.txtbUnosIgr01.MaxLength = 32767;
             this.txtbUnosIgr01.Name = "txtbUnosIgr01";
             this.txtbUnosIgr01.PasswordChar = '\0';
@@ -195,7 +195,7 @@
             this.txtbUnosIgr02.CustomButton.Visible = false;
             this.txtbUnosIgr02.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtbUnosIgr02.Lines = new string[0];
-            this.txtbUnosIgr02.Location = new System.Drawing.Point(125, 122);
+            this.txtbUnosIgr02.Location = new System.Drawing.Point(173, 122);
             this.txtbUnosIgr02.MaxLength = 32767;
             this.txtbUnosIgr02.Name = "txtbUnosIgr02";
             this.txtbUnosIgr02.PasswordChar = '\0';
@@ -226,7 +226,7 @@
             this.txtbUnosIgr03.CustomButton.Visible = false;
             this.txtbUnosIgr03.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtbUnosIgr03.Lines = new string[0];
-            this.txtbUnosIgr03.Location = new System.Drawing.Point(125, 184);
+            this.txtbUnosIgr03.Location = new System.Drawing.Point(173, 184);
             this.txtbUnosIgr03.MaxLength = 32767;
             this.txtbUnosIgr03.Name = "txtbUnosIgr03";
             this.txtbUnosIgr03.PasswordChar = '\0';
@@ -246,7 +246,7 @@
             this.rbtnUnosIgr01.AutoSize = true;
             this.rbtnUnosIgr01.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
             this.rbtnUnosIgr01.FontWeight = MetroFramework.MetroCheckBoxWeight.Bold;
-            this.rbtnUnosIgr01.Location = new System.Drawing.Point(125, 238);
+            this.rbtnUnosIgr01.Location = new System.Drawing.Point(173, 238);
             this.rbtnUnosIgr01.Name = "rbtnUnosIgr01";
             this.rbtnUnosIgr01.Size = new System.Drawing.Size(39, 20);
             this.rbtnUnosIgr01.TabIndex = 10;
@@ -258,7 +258,7 @@
             this.rbtnUnosIgr02.AutoSize = true;
             this.rbtnUnosIgr02.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
             this.rbtnUnosIgr02.FontWeight = MetroFramework.MetroCheckBoxWeight.Bold;
-            this.rbtnUnosIgr02.Location = new System.Drawing.Point(202, 238);
+            this.rbtnUnosIgr02.Location = new System.Drawing.Point(250, 238);
             this.rbtnUnosIgr02.Name = "rbtnUnosIgr02";
             this.rbtnUnosIgr02.Size = new System.Drawing.Size(34, 20);
             this.rbtnUnosIgr02.TabIndex = 11;
@@ -268,11 +268,10 @@
             // chbUnosIgr01
             // 
             this.chbUnosIgr01.AutoSize = true;
-            this.chbUnosIgr01.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
             this.chbUnosIgr01.FontWeight = MetroFramework.MetroCheckBoxWeight.Bold;
-            this.chbUnosIgr01.Location = new System.Drawing.Point(125, 293);
+            this.chbUnosIgr01.Location = new System.Drawing.Point(173, 293);
             this.chbUnosIgr01.Name = "chbUnosIgr01";
-            this.chbUnosIgr01.Size = new System.Drawing.Size(157, 20);
+            this.chbUnosIgr01.Size = new System.Drawing.Size(140, 17);
             this.chbUnosIgr01.TabIndex = 12;
             this.chbUnosIgr01.Text = "Zdravstveni karton";
             this.chbUnosIgr01.UseSelectable = true;
@@ -281,7 +280,7 @@
             // 
             this.btnUnosIgrPut.AutoSize = true;
             this.btnUnosIgrPut.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.btnUnosIgrPut.Location = new System.Drawing.Point(51, 393);
+            this.btnUnosIgrPut.Location = new System.Drawing.Point(83, 393);
             this.btnUnosIgrPut.Name = "btnUnosIgrPut";
             this.btnUnosIgrPut.Size = new System.Drawing.Size(104, 40);
             this.btnUnosIgrPut.TabIndex = 13;
@@ -311,9 +310,9 @@
             this.panelUnosIgr.HorizontalScrollbarBarColor = true;
             this.panelUnosIgr.HorizontalScrollbarHighlightOnWheel = false;
             this.panelUnosIgr.HorizontalScrollbarSize = 10;
-            this.panelUnosIgr.Location = new System.Drawing.Point(728, 102);
+            this.panelUnosIgr.Location = new System.Drawing.Point(697, 139);
             this.panelUnosIgr.Name = "panelUnosIgr";
-            this.panelUnosIgr.Size = new System.Drawing.Size(343, 461);
+            this.panelUnosIgr.Size = new System.Drawing.Size(405, 461);
             this.panelUnosIgr.TabIndex = 14;
             this.panelUnosIgr.VerticalScrollbarBarColor = true;
             this.panelUnosIgr.VerticalScrollbarHighlightOnWheel = false;
@@ -335,7 +334,7 @@
             // 
             this.cmbUnosIgr01.FormattingEnabled = true;
             this.cmbUnosIgr01.ItemHeight = 24;
-            this.cmbUnosIgr01.Location = new System.Drawing.Point(125, 339);
+            this.cmbUnosIgr01.Location = new System.Drawing.Point(173, 339);
             this.cmbUnosIgr01.Name = "cmbUnosIgr01";
             this.cmbUnosIgr01.Size = new System.Drawing.Size(180, 30);
             this.cmbUnosIgr01.TabIndex = 16;
@@ -356,7 +355,7 @@
             // 
             this.btnUnosIgraca02.AutoSize = true;
             this.btnUnosIgraca02.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.btnUnosIgraca02.Location = new System.Drawing.Point(173, 393);
+            this.btnUnosIgraca02.Location = new System.Drawing.Point(208, 393);
             this.btnUnosIgraca02.Name = "btnUnosIgraca02";
             this.btnUnosIgraca02.Size = new System.Drawing.Size(104, 40);
             this.btnUnosIgraca02.TabIndex = 15;
@@ -384,7 +383,7 @@
             this.panelUnosVj.HorizontalScrollbarBarColor = true;
             this.panelUnosVj.HorizontalScrollbarHighlightOnWheel = false;
             this.panelUnosVj.HorizontalScrollbarSize = 10;
-            this.panelUnosVj.Location = new System.Drawing.Point(677, 78);
+            this.panelUnosVj.Location = new System.Drawing.Point(728, 102);
             this.panelUnosVj.Name = "panelUnosVj";
             this.panelUnosVj.Size = new System.Drawing.Size(374, 478);
             this.panelUnosVj.TabIndex = 15;
@@ -635,9 +634,9 @@
             this.panelUnosEkipa.HorizontalScrollbarBarColor = true;
             this.panelUnosEkipa.HorizontalScrollbarHighlightOnWheel = false;
             this.panelUnosEkipa.HorizontalScrollbarSize = 10;
-            this.panelUnosEkipa.Location = new System.Drawing.Point(634, 170);
+            this.panelUnosEkipa.Location = new System.Drawing.Point(640, 57);
             this.panelUnosEkipa.Name = "panelUnosEkipa";
-            this.panelUnosEkipa.Size = new System.Drawing.Size(357, 273);
+            this.panelUnosEkipa.Size = new System.Drawing.Size(377, 260);
             this.panelUnosEkipa.TabIndex = 16;
             this.panelUnosEkipa.Theme = MetroFramework.MetroThemeStyle.Light;
             this.panelUnosEkipa.VerticalScrollbarBarColor = true;
@@ -648,7 +647,7 @@
             // btnUnosEkipe02
             // 
             this.btnUnosEkipe02.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.btnUnosEkipe02.Location = new System.Drawing.Point(174, 158);
+            this.btnUnosEkipe02.Location = new System.Drawing.Point(180, 180);
             this.btnUnosEkipe02.Name = "btnUnosEkipe02";
             this.btnUnosEkipe02.Size = new System.Drawing.Size(104, 40);
             this.btnUnosEkipe02.TabIndex = 8;
@@ -660,7 +659,7 @@
             // btnUnosEkipe01
             // 
             this.btnUnosEkipe01.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.btnUnosEkipe01.Location = new System.Drawing.Point(64, 158);
+            this.btnUnosEkipe01.Location = new System.Drawing.Point(70, 180);
             this.btnUnosEkipe01.Name = "btnUnosEkipe01";
             this.btnUnosEkipe01.Size = new System.Drawing.Size(104, 40);
             this.btnUnosEkipe01.TabIndex = 7;
@@ -686,7 +685,7 @@
             this.txtbUnosEkipe02.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtbUnosEkipe02.FontWeight = MetroFramework.MetroTextBoxWeight.Bold;
             this.txtbUnosEkipe02.Lines = new string[0];
-            this.txtbUnosEkipe02.Location = new System.Drawing.Point(162, 103);
+            this.txtbUnosEkipe02.Location = new System.Drawing.Point(180, 115);
             this.txtbUnosEkipe02.MaxLength = 32767;
             this.txtbUnosEkipe02.Name = "txtbUnosEkipe02";
             this.txtbUnosEkipe02.PasswordChar = '\0';
@@ -718,7 +717,7 @@
             this.txtbUnosEkipe.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtbUnosEkipe.FontWeight = MetroFramework.MetroTextBoxWeight.Bold;
             this.txtbUnosEkipe.Lines = new string[0];
-            this.txtbUnosEkipe.Location = new System.Drawing.Point(162, 62);
+            this.txtbUnosEkipe.Location = new System.Drawing.Point(180, 62);
             this.txtbUnosEkipe.MaxLength = 32767;
             this.txtbUnosEkipe.Name = "txtbUnosEkipe";
             this.txtbUnosEkipe.PasswordChar = '\0';
@@ -737,7 +736,7 @@
             // 
             this.lblUnosEkipe03.AutoSize = true;
             this.lblUnosEkipe03.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.lblUnosEkipe03.Location = new System.Drawing.Point(33, 103);
+            this.lblUnosEkipe03.Location = new System.Drawing.Point(33, 115);
             this.lblUnosEkipe03.Name = "lblUnosEkipe03";
             this.lblUnosEkipe03.Size = new System.Drawing.Size(91, 20);
             this.lblUnosEkipe03.TabIndex = 4;
@@ -808,6 +807,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 550);
+            this.Controls.Add(this.panelUnosEkipa);
+            this.Controls.Add(this.panelUnosVj);
             this.Controls.Add(this.lblUnosResult);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panelUnosIgr);
@@ -815,8 +816,6 @@
             this.Controls.Add(this.btnUnosVjezba);
             this.Controls.Add(this.btnUnosEkipa);
             this.Controls.Add(this.btnUnosIgrac);
-            this.Controls.Add(this.panelUnosEkipa);
-            this.Controls.Add(this.panelUnosVj);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Unos";
             this.Text = "BBStat - Unos";

@@ -78,6 +78,7 @@ namespace BB_app.View
             }
             catch (ArgumentException err)
             {
+                lblKoseviResult.ForeColor = Color.Red;
                 Change_label("greška kod unosa šuta: " + err.ToString());
             }
 
@@ -95,6 +96,7 @@ namespace BB_app.View
             t.Tick += (s, e) =>
             {
                 lblKoseviResult.Visible = false;
+                lblKoseviResult.ForeColor = Color.LimeGreen;
                 t.Stop();
             };
         }

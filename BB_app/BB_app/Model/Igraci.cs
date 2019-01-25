@@ -25,6 +25,7 @@ namespace BB_app.Model
         public decimal Skok_ud { get; set; }
         public bool Prvo_mjerenje { get; set; }
         public string Ekipa_naziv { get; set; }
+        public Ekipa Ekipa_podaci = new Ekipa();
 
         public Igraci() { }
 

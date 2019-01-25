@@ -63,7 +63,7 @@
             this.metroPanel1.HorizontalScrollbarSize = 10;
             this.metroPanel1.Location = new System.Drawing.Point(69, 82);
             this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(382, 456);
+            this.metroPanel1.Size = new System.Drawing.Size(382, 501);
             this.metroPanel1.TabIndex = 0;
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
@@ -85,7 +85,7 @@
             this.txtbZapisnik03.CustomButton.Visible = false;
             this.txtbZapisnik03.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtbZapisnik03.Lines = new string[0];
-            this.txtbZapisnik03.Location = new System.Drawing.Point(183, 314);
+            this.txtbZapisnik03.Location = new System.Drawing.Point(185, 345);
             this.txtbZapisnik03.MaxLength = 32767;
             this.txtbZapisnik03.Name = "txtbZapisnik03";
             this.txtbZapisnik03.PasswordChar = '\0';
@@ -116,7 +116,7 @@
             this.txtbZapisnik02.CustomButton.Visible = false;
             this.txtbZapisnik02.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtbZapisnik02.Lines = new string[0];
-            this.txtbZapisnik02.Location = new System.Drawing.Point(183, 240);
+            this.txtbZapisnik02.Location = new System.Drawing.Point(185, 271);
             this.txtbZapisnik02.MaxLength = 32767;
             this.txtbZapisnik02.Name = "txtbZapisnik02";
             this.txtbZapisnik02.PasswordChar = '\0';
@@ -147,7 +147,7 @@
             this.txtbZapisnik01.CustomButton.Visible = false;
             this.txtbZapisnik01.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtbZapisnik01.Lines = new string[0];
-            this.txtbZapisnik01.Location = new System.Drawing.Point(183, 163);
+            this.txtbZapisnik01.Location = new System.Drawing.Point(185, 194);
             this.txtbZapisnik01.MaxLength = 32767;
             this.txtbZapisnik01.Name = "txtbZapisnik01";
             this.txtbZapisnik01.PasswordChar = '\0';
@@ -166,7 +166,7 @@
             // 
             this.cmbZapisnik01.FormattingEnabled = true;
             this.cmbZapisnik01.ItemHeight = 24;
-            this.cmbZapisnik01.Location = new System.Drawing.Point(183, 75);
+            this.cmbZapisnik01.Location = new System.Drawing.Point(185, 106);
             this.cmbZapisnik01.Name = "cmbZapisnik01";
             this.cmbZapisnik01.Size = new System.Drawing.Size(168, 30);
             this.cmbZapisnik01.TabIndex = 6;
@@ -177,7 +177,7 @@
             // 
             this.lblZapisnik04.AutoSize = true;
             this.lblZapisnik04.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.lblZapisnik04.Location = new System.Drawing.Point(29, 314);
+            this.lblZapisnik04.Location = new System.Drawing.Point(31, 345);
             this.lblZapisnik04.Name = "lblZapisnik04";
             this.lblZapisnik04.Size = new System.Drawing.Size(106, 20);
             this.lblZapisnik04.TabIndex = 5;
@@ -187,7 +187,7 @@
             // 
             this.lblZapisnik03.AutoSize = true;
             this.lblZapisnik03.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.lblZapisnik03.Location = new System.Drawing.Point(13, 240);
+            this.lblZapisnik03.Location = new System.Drawing.Point(15, 271);
             this.lblZapisnik03.Name = "lblZapisnik03";
             this.lblZapisnik03.Size = new System.Drawing.Size(122, 20);
             this.lblZapisnik03.TabIndex = 4;
@@ -197,7 +197,7 @@
             // 
             this.lblZapisnik02.AutoSize = true;
             this.lblZapisnik02.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.lblZapisnik02.Location = new System.Drawing.Point(48, 163);
+            this.lblZapisnik02.Location = new System.Drawing.Point(50, 194);
             this.lblZapisnik02.Name = "lblZapisnik02";
             this.lblZapisnik02.Size = new System.Drawing.Size(87, 20);
             this.lblZapisnik02.TabIndex = 3;
@@ -207,7 +207,7 @@
             // 
             this.lblZapisnik01.AutoSize = true;
             this.lblZapisnik01.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.lblZapisnik01.Location = new System.Drawing.Point(28, 75);
+            this.lblZapisnik01.Location = new System.Drawing.Point(30, 106);
             this.lblZapisnik01.Name = "lblZapisnik01";
             this.lblZapisnik01.Size = new System.Drawing.Size(107, 20);
             this.lblZapisnik01.TabIndex = 2;
@@ -216,7 +216,7 @@
             // btnZapisnik01
             // 
             this.btnZapisnik01.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.btnZapisnik01.Location = new System.Drawing.Point(482, 322);
+            this.btnZapisnik01.Location = new System.Drawing.Point(487, 367);
             this.btnZapisnik01.Name = "btnZapisnik01";
             this.btnZapisnik01.Size = new System.Drawing.Size(300, 105);
             this.btnZapisnik01.TabIndex = 1;
@@ -228,7 +228,7 @@
             // btnZapisnik02
             // 
             this.btnZapisnik02.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.btnZapisnik02.Location = new System.Drawing.Point(482, 433);
+            this.btnZapisnik02.Location = new System.Drawing.Point(487, 478);
             this.btnZapisnik02.Name = "btnZapisnik02";
             this.btnZapisnik02.Size = new System.Drawing.Size(145, 105);
             this.btnZapisnik02.TabIndex = 2;
@@ -248,7 +248,7 @@
             // btnZapisnik03
             // 
             this.btnZapisnik03.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.btnZapisnik03.Location = new System.Drawing.Point(637, 433);
+            this.btnZapisnik03.Location = new System.Drawing.Point(642, 478);
             this.btnZapisnik03.Name = "btnZapisnik03";
             this.btnZapisnik03.Size = new System.Drawing.Size(145, 105);
             this.btnZapisnik03.TabIndex = 4;
@@ -273,7 +273,7 @@
             this.lblZapisnikResult.AutoSize = true;
             this.lblZapisnikResult.BackColor = System.Drawing.Color.Transparent;
             this.lblZapisnikResult.ForeColor = System.Drawing.Color.White;
-            this.lblZapisnikResult.Location = new System.Drawing.Point(66, 579);
+            this.lblZapisnikResult.Location = new System.Drawing.Point(71, 624);
             this.lblZapisnikResult.Name = "lblZapisnikResult";
             this.lblZapisnikResult.Size = new System.Drawing.Size(46, 17);
             this.lblZapisnikResult.TabIndex = 6;
@@ -286,7 +286,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::BB_app.Properties.Resources._1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(857, 605);
+            this.ClientSize = new System.Drawing.Size(932, 685);
             this.Controls.Add(this.lblZapisnikResult);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnZapisnik03);

@@ -106,6 +106,7 @@ namespace BB_app.View
             }
             catch(ArgumentException err)
             {
+                lblStatistikaResult.ForeColor = System.Drawing.Color.Red;
                 Change_label("Greška kod čitanja podataka: " + err.ToString());
             }
             
@@ -229,6 +230,7 @@ namespace BB_app.View
             t.Tick += (s, e) =>
             {
                 lblStatistikaResult.Visible = false;
+                lblStatistikaResult.ForeColor = System.Drawing.Color.LimeGreen;
                 t.Stop();
             };
         }

@@ -65,7 +65,7 @@
             this.metroPanel1.HorizontalScrollbarSize = 10;
             this.metroPanel1.Location = new System.Drawing.Point(438, 30);
             this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(501, 332);
+            this.metroPanel1.Size = new System.Drawing.Size(501, 409);
             this.metroPanel1.TabIndex = 1;
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
@@ -74,7 +74,7 @@
             // calendarTreningKreiraj01
             // 
             this.calendarTreningKreiraj01.FirstDayOfWeek = System.Windows.Forms.Day.Monday;
-            this.calendarTreningKreiraj01.Location = new System.Drawing.Point(106, 104);
+            this.calendarTreningKreiraj01.Location = new System.Drawing.Point(117, 115);
             this.calendarTreningKreiraj01.Name = "calendarTreningKreiraj01";
             this.calendarTreningKreiraj01.TabIndex = 4;
             // 
@@ -94,7 +94,7 @@
             this.txtbTreningKreiraj01.CustomButton.Visible = false;
             this.txtbTreningKreiraj01.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtbTreningKreiraj01.Lines = new string[0];
-            this.txtbTreningKreiraj01.Location = new System.Drawing.Point(186, 34);
+            this.txtbTreningKreiraj01.Location = new System.Drawing.Point(228, 34);
             this.txtbTreningKreiraj01.MaxLength = 32767;
             this.txtbTreningKreiraj01.Name = "txtbTreningKreiraj01";
             this.txtbTreningKreiraj01.PasswordChar = '\0';
@@ -122,7 +122,7 @@
             // dgvTreningKreiraj01
             // 
             this.dgvTreningKreiraj01.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTreningKreiraj01.Location = new System.Drawing.Point(438, 387);
+            this.dgvTreningKreiraj01.Location = new System.Drawing.Point(438, 483);
             this.dgvTreningKreiraj01.Name = "dgvTreningKreiraj01";
             this.dgvTreningKreiraj01.RowTemplate.Height = 24;
             this.dgvTreningKreiraj01.Size = new System.Drawing.Size(501, 204);
@@ -142,7 +142,7 @@
             // btnTreningKreiraj01
             // 
             this.btnTreningKreiraj01.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.btnTreningKreiraj01.Location = new System.Drawing.Point(104, 505);
+            this.btnTreningKreiraj01.Location = new System.Drawing.Point(104, 601);
             this.btnTreningKreiraj01.Name = "btnTreningKreiraj01";
             this.btnTreningKreiraj01.Size = new System.Drawing.Size(183, 86);
             this.btnTreningKreiraj01.TabIndex = 4;
@@ -168,7 +168,7 @@
             this.lblTreningKreirajResult.BackColor = System.Drawing.Color.Transparent;
             this.lblTreningKreirajResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTreningKreirajResult.ForeColor = System.Drawing.Color.Red;
-            this.lblTreningKreirajResult.Location = new System.Drawing.Point(104, 602);
+            this.lblTreningKreirajResult.Location = new System.Drawing.Point(104, 698);
             this.lblTreningKreirajResult.Name = "lblTreningKreirajResult";
             this.lblTreningKreirajResult.Size = new System.Drawing.Size(46, 18);
             this.lblTreningKreirajResult.TabIndex = 6;
@@ -181,7 +181,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::BB_app.Properties.Resources._1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1049, 631);
+            this.ClientSize = new System.Drawing.Size(1081, 738);
             this.Controls.Add(this.lblTreningKreirajResult);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnTreningKreiraj01);
