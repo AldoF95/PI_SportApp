@@ -88,7 +88,6 @@ namespace BB_app.View
             gv.ColumnCount = 3;
             
             var collection = new ObservableCollection<Igraci>(igr);
-            collection.CollectionChanged += Collection_CollectionChanged;
             BindingSource datasource = new BindingSource(collection, null);
 
             gv.Columns[0].HeaderText = "ID";
@@ -111,11 +110,6 @@ namespace BB_app.View
             this.Controls.Add(gv);
         }
 
-        private void Collection_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
-        {
-            
-        }
-
         private void btnTreningKreiraj01_Click(object sender, EventArgs e)
         {
             List<Igraci> igrac = new List<Igraci>();
@@ -132,6 +126,7 @@ namespace BB_app.View
             }
             Trening tr = new Trening(txtbTreningKreiraj01.Text, (int)tren.Count);
             Trening tr_id = new Trening();
+            //Spremanje i dohvacanje spremljenog treninga
             try
             {
                 DB_connection.OpenConn();
@@ -159,6 +154,7 @@ namespace BB_app.View
                 }
                 pris.Add(p);
             }
+            //Spremanje prisutnosti
             try
             {
                 DB_connection.OpenConn();

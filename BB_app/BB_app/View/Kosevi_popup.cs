@@ -12,7 +12,6 @@ using BB_app.Model;
 
 namespace BB_app.View
 {
-    //forma za biranje bodova i pogodeno ili ne
     public partial class Kosevi_popup : Form
     {
         public bool Pogodeno_popup { get; set; }
@@ -22,7 +21,6 @@ namespace BB_app.View
 
         public Kosevi_popup(int X, int Y, int formX, int formY, Kosevi kos)
         {
-            
             InitializeComponent();
             //lokacija popoupa
             this.Location = new Point(formX + X, formY + Y);
@@ -32,12 +30,15 @@ namespace BB_app.View
         //kada se odabere broj bodova
         private void rbtnKoseviPopup02_CheckedChanged(object sender, EventArgs e)
         {
-            //ponavalja se za sve bodove
             if (rbtnKoseviPopup02.Checked)
             {
                 kos_sut.Br_Bod = 1;
                 this.Bodovi_popup = 1;
-                if (chbKoseviPogodeno.Checked) { kos_sut.Pogodak = true; this.Pogodeno_popup = true; }
+                if (chbKoseviPogodeno.Checked)
+                {
+                    kos_sut.Pogodak = true;
+                    this.Pogodeno_popup = true;
+                }
                 else { kos_sut.Pogodak = false; this.Pogodeno_popup = false; }
                 this.status = true;
             }

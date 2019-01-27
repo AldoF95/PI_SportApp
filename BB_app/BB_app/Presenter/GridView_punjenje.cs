@@ -54,7 +54,6 @@ namespace BB_app.Presenter
         }
         private void gvIgraci()
         {
-            //ponavlja se za sve
             //broj stupca
             gv.ColumnCount = 2;
 
@@ -62,7 +61,7 @@ namespace BB_app.Presenter
             DB_connection.OpenConn();
             if(get_by_id != 0)
             {
-                igr = DB_GET.Ekipa_Get_By_Id(get_by_id);
+                igr = DB_GET.Ekipa_Get_By_Id(get_by_id); //dohvacanje igraca iz iste ekipe
             }
             else
             {
@@ -72,7 +71,6 @@ namespace BB_app.Presenter
             DB_connection.CloseConn();
 
             var collection = new ObservableCollection<Igraci>(igr); //stvaranje kolekcije...preko presentera
-            //collection.CollectionChanged += Collection_CollectionChanged;
             datasource = new BindingSource(collection, null); //vezanje kolekcije za datasource
             //postavljanje vidljivih stupaca
             gv.Columns[0].HeaderText = "Ime";
@@ -81,11 +79,11 @@ namespace BB_app.Presenter
             gv.Columns[1].DataPropertyName = "Prezime";
             
             //lambda funkcija (google it)....za dobivanje igraca kojeg se kliknulo u grid view 
-            //s -> sender, e -> click argument
             gv.CellClick += (s, e) =>
             {
                 igrac_id = (Igraci)this.igr[e.RowIndex];
             };
+
             gv.DataSource = datasource; //vezanje grid view sa datasource (koji je kolekcija)
             gv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill; //da se popuni prostor
             gv.AutoResizeColumns();
@@ -100,7 +98,6 @@ namespace BB_app.Presenter
             DB_connection.CloseConn();
 
             var collection = new ObservableCollection<Ekipa>(ek);
-            //collection.CollectionChanged += Collection_CollectionChangedE;
             datasource = new BindingSource(collection, null);
 
             gv.ColumnCount = 1;
@@ -117,23 +114,6 @@ namespace BB_app.Presenter
             gv.AutoResizeColumns();
             gv.AllowUserToAddRows = false;
         }
-
-        private void Collection_CollectionChangedE(object sender, NotifyCollectionChangedEventArgs e)
-        {
-            if (e.Action == NotifyCollectionChangedAction.Add)
-            {
-                foreach (Ekipa i in e.NewItems) { i.Naziv = "Nova ekipa"; }
-            }
-        }
-
-        private void Collection_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
-        {
-            if(e.Action == NotifyCollectionChangedAction.Add)
-            {
-                foreach(Igraci i in e.NewItems) { i.Ime = "Novi igrac"; }
-            }
-        }
-
 
     }
 }

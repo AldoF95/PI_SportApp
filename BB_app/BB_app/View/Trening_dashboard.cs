@@ -36,16 +36,20 @@ namespace BB_app.View
             BindingSource datasource;
             dgvDashboardIgraci.AutoGenerateColumns = false;
             dgvDashboardIgraci.ColumnCount = 2;
+
             var collection = new ObservableCollection<Igraci>(igraci_now);
             datasource = new BindingSource(collection, null);
+
             dgvDashboardIgraci.Columns[0].HeaderText = "Ime";
             dgvDashboardIgraci.Columns[0].DataPropertyName = "Ime";
             dgvDashboardIgraci.Columns[1].HeaderText = "Prezime";
             dgvDashboardIgraci.Columns[1].DataPropertyName = "Prezime";
+
             dgvDashboardIgraci.DataSource = datasource;
             dgvDashboardIgraci.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvDashboardIgraci.AutoResizeColumns();
             dgvDashboardIgraci.AllowUserToAddRows = false;
+
             dgvDashboardIgraci.CellClick += (s, e) =>
             {
                 Check_Kosevi_List();
@@ -187,7 +191,7 @@ namespace BB_app.View
             txtbPanelValue.Text = "";
             panelDashboardUnos.Visible = false;
         }
-        //FUNKCIJE
+        //FUNKCIJE i METODE
         //prikaz panela za unos ovisno o buttonu koje se pretislo
         public void Show_panel(string titel, string igrac_ime, string igrac_prezime)
         {

@@ -25,7 +25,6 @@ namespace BB_app.View
 
         private void btnMjerenjeUnos_Click(object sender, EventArgs e)
         {
-            //punjenje instancu klase
             Statistika stat = new Statistika();
             stat.Entity_Id = igr.Id;
             stat.Entity_type = 'I';

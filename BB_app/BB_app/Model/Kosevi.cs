@@ -22,8 +22,7 @@ namespace BB_app.Model
         //metoda prima (po redu): pozicija X od klika, pozicija Y od klika, visina slike od terena, sirina slike od terena
         public void Set_XY(decimal X, decimal Y, decimal H, decimal W)
         {
-            //sprema postotak (odnos)
-            //postotak (broj izmedu 0 i 1) je neovisan o velicini slike...potrebno za prikaz suteva
+            //izmedu 0 i 1
             Poz_X = X / W;
             Poz_Y = Y / H;
         }

@@ -54,7 +54,6 @@
             this.btnTrening.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnTrening.UseSelectable = true;
             this.btnTrening.Click += new System.EventHandler(this.btnTrening_Click);
-            this.btnTrening.MouseHover += new System.EventHandler(this.btnTrening_MouseHover);
             // 
             // btnUnos
             // 

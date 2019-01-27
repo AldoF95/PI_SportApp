@@ -9,8 +9,7 @@ namespace BB_app.Model.DB
 {
     public static class DB_connection
     {
-        //static class
-        //connection string --> moze i "URI=file:database.db"
+
         private static string conn_string = "URI=file:database.db";
         internal static SQLiteConnection conn = new SQLiteConnection(conn_string);
         //open connection

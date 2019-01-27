@@ -9,8 +9,6 @@ namespace BB_app.Model.DB
 {
     static class DB_GET
     {
-        //sve se ponavlja
-        //staticna metoda return list of Vjezbe
         public static List<Vjezbe> Vjezbe_Get_All()
         {
             var lista = new List<Vjezbe>();

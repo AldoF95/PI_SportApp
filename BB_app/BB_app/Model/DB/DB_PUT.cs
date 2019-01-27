@@ -9,17 +9,15 @@ namespace BB_app.Model.DB
 {
     static class DB_PUT
     {
-        //sve se ponavlja
-        //staticna metoda sprema jednu instancu Vjezbe
+
         public static void Vjezbe_Put(Vjezbe vj)
         {
-            //command to execute from connection conn (iz DB_connection)
             SQLiteCommand com = DB_connection.conn.CreateCommand();
             com.CommandText = String.Format(@"INSERT INTO VJEZBE (Naziv, Opis, Sutevi, Brzina, Brojac, Udaljenost, Drugo)
-                                               VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}')", //insert request
+                                               VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}')", //insert querry
                                                vj.Naziv, vj.Opis, vj.Sutevi, vj.Brzina, vj.Brojac, vj.Udaljenost, vj.Drugo);
-            com.ExecuteNonQuery();//executes a non querry (ne vraca nista)
-            com.Dispose();//command dispose
+            com.ExecuteNonQuery();
+            com.Dispose();//resource dispose
         }
         public static void Igraci_Put(Igraci igr)
         {

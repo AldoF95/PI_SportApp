@@ -12,7 +12,7 @@ namespace BB_app.Model
         public DateTime Datum { get; set; }
         public string Naziv { get; set; }
         public int Br_Vjezbi { get; set; }
-        public List<Vjezbe> Lista_vjezbe = new List<Vjezbe>();
+        public List<Vjezbe> Lista_vjezbe;
 
         public Trening() { }
 

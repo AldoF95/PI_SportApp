@@ -22,20 +22,20 @@ namespace BB_app.View
         private void btnUnosIgrac_Click(object sender, EventArgs e)
         {
             //za poziciju na ekranu, da se pojavi na sredini slike
-            var x = (this.Width / 2) - (panelUnosIgr.Width / 2); //sredina forme - polovica sirine panela za prikazati 
-            var y = (this.Height / 2) - (panelUnosIgr.Height / 2);//isto za visinu
-            panelUnosIgr.Location = new Point(x, y); //stvaranje nove tocke za lokaciju panela
+            var x = (this.Width / 2) - (panelUnosIgr.Width / 2); 
+            var y = (this.Height / 2) - (panelUnosIgr.Height / 2);
+            panelUnosIgr.Location = new Point(x, y);
 
             var ek = new List<Ekipa>();
 
             try
             {
                 DB_connection.OpenConn();
-                ek = DB_GET.Ekipa_Get_All(); //dohvacanje listu ekipa
+                ek = DB_GET.Ekipa_Get_All();
                 DB_connection.CloseConn();
-                cmbUnosIgr01.Items.Clear(); //praznjenje comboboxa (drop down menu) ako ima vec unutra nesto
-                cmbUnosIgr01.DisplayMember = "Naziv"; //prikaz samo imena
-                foreach (var i in ek) { cmbUnosIgr01.Items.Add(i); } //punjenje combo box sa svakim dohvacenim elemntom
+                cmbUnosIgr01.Items.Clear();
+                cmbUnosIgr01.DisplayMember = "Naziv";
+                foreach (var i in ek) { cmbUnosIgr01.Items.Add(i); }
             }
             catch(ArgumentException err)
             {
@@ -44,9 +44,7 @@ namespace BB_app.View
             }
             
 
-            //sve se nalazi na jednoj formi
-            //pa za prikaz jednog treba sakriti druge kontrole
-            //enable --> ne moze se klikat, visible --> ne vidi s
+            //enable --> neme interakcije, visible --> ne vidi se
             panelUnosIgr.Visible = true;
             panelUnosIgr.Enabled = true;
             btnUnosIgrac.Visible = false;
@@ -63,22 +61,22 @@ namespace BB_app.View
         {
             var Igr = new Igraci();
             var Ek = new Ekipa();
-            Ek = (Ekipa)cmbUnosIgr01.SelectedItem; //spremanje u var odabranu ekipu iz combo boxa
-            Igr.Ime = txtbUnosIgr01.Text; //podatak iz text boxa
+            Ek = (Ekipa)cmbUnosIgr01.SelectedItem; 
+            Igr.Ime = txtbUnosIgr01.Text;
             Igr.Prezime = txtbUnosIgr02.Text;
-            Igr.Godiste = Int32.Parse(txtbUnosIgr03.Text); //parsanje --> text box je string, treba int, pa se parsa na int32 (int)
+            Igr.Godiste = Int32.Parse(txtbUnosIgr03.Text);
 
-            if (rbtnUnosIgr01.Checked) { Igr.Spol = Char.Parse(rbtnUnosIgr01.Text); } //provjerea ako je oznacen radio button
+            if (rbtnUnosIgr01.Checked) { Igr.Spol = Char.Parse(rbtnUnosIgr01.Text); }
             else if (rbtnUnosIgr02.Checked) { Igr.Spol = Char.Parse(rbtnUnosIgr02.Text); }
 
-            if (chbUnosIgr01.Checked){ Igr.Karton = true; } //provjera ako je check box oznacen
+            if (chbUnosIgr01.Checked){ Igr.Karton = true; } 
             else{ Igr.Karton = false; }
             Igr.Ekipa_id = Ek.Id;
 
             try
             {
                 DB_connection.OpenConn();
-                DB_PUT.Igraci_Put(Igr); //spremanje objekta igraca sa podacima
+                DB_PUT.Igraci_Put(Igr);
                 DB_connection.CloseConn();
                 Change_label("Igrač " + Igr.Ime.ToString() + " unešen");
                 btnUnosIgraca02_Click(sender, e);

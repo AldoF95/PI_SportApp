@@ -17,14 +17,13 @@ namespace BB_app.View
         public Zapisnik_popup(int X, int Y, Ekipa ek)
         {
             InitializeComponent();
-            //pozicijoniranje popupa na pozicji X+100 i Y+100
             this.Location = new Point(X+100, Y+100);
             eki = ek;
         }
 
         private void btnZapisnikPop01_Click(object sender, EventArgs e)
         {
-            this.Close(); //zatvaranje popupa
+            this.Close();
         }
 
         private void btnZapisnikPop02_Click(object sender, EventArgs e)

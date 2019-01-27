@@ -25,11 +25,6 @@ namespace BB_app.View
             new Trening_kreiranje().Show();
         }
 
-        private void btnTrening_MouseHover(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnUnos_Click(object sender, EventArgs e)
         {
             new Unos().Show();

@@ -9,12 +9,13 @@ namespace BB_app.Model
 {
     public class Statistika : Igraci
     {
+        public int Id { get; set; }
         public int Entity_Id { get; set; }
         public char Entity_type { get; set; }
         public decimal Postotak_suteva { get; set; }
         public decimal Postotak_prisutnost { get; set; }
         public List<Prisutnost> pri;
-        public List<Kosevi> sut = new List<Kosevi>();
+        public List<Kosevi> sut;
 
         public Statistika() { }
 

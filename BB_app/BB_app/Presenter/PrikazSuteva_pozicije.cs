@@ -19,7 +19,7 @@ namespace BB_app.Presenter
         //konstruktor prima: true/false kondicija (pogodeno ili ne), i pozicije
         public PrikazSuteva_pozicije(bool condition, decimal pX, decimal pY)
         {
-            pic = new PictureBox(); //kreira novu sliku
+            pic = new PictureBox();
             pic.Size = new Size(20, 20);
             pic.SizeMode = PictureBoxSizeMode.StretchImage;
             pic.BackColor = Color.Transparent;

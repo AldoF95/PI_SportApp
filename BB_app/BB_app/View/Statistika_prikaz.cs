@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using LiveCharts;
 using LiveCharts.Wpf;
@@ -30,6 +24,7 @@ namespace BB_app.View
         string name_send_to_form;
         Ekipa ekipa_id;
         public List<Statistika> stat = new List<Statistika>();
+
         public Statistika_prikaz()
         {
             InitializeComponent();

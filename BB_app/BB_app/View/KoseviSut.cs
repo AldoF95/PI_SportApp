@@ -15,7 +15,6 @@ using BB_app.Presenter;
 
 namespace BB_app.View
 { 
-    //klasa za unos suteva po pozicji na terenu
     public partial class KoseviSut : Form
     {
         public GridView_punjenje gridView;
@@ -44,11 +43,9 @@ namespace BB_app.View
 
         }
 
-        //kada se klikne na sliku
         private void picbKoseviTeren_MouseUp(object sender, MouseEventArgs e)
         {
             Kosevi kos = new Kosevi();
-            //metoda od klase Kosevi
             kos.Set_XY((decimal)e.Location.X, (decimal)e.Location.Y, (decimal)picbKoseviTeren.Height, (decimal)picbKoseviTeren.Width);
             if(s == 'E')
             {

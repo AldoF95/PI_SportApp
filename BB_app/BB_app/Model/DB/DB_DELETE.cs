@@ -13,8 +13,8 @@ namespace BB_app.Model.DB
         {
             SQLiteCommand com = DB_connection.conn.CreateCommand();
             com.CommandText = String.Format(@"DELETE FROM {0} WHERE ID = {1}", table, id.ToString());
-            com.ExecuteNonQuery();//executes a non querry (ne vraca nista)
-            com.Dispose();//command dispose
+            com.ExecuteNonQuery();//executes a non querry (vraca broj izvodenja)
+            com.Dispose();//oslobodi resurse
         }
     }
 }
